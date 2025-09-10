@@ -26,6 +26,7 @@ import { registerLocaleData } from '@angular/common';
 import { HeaderComponent } from './components/template/header/header.component';
 import { FooterComponent } from './components/template/footer/footer.component';
 import { NavComponent } from './components/template/nav/nav.component';
+import { FormaPagamentoCrudComponent } from './views/forma-pagamento-crud/forma-pagamento-crud.component';
 
 registerLocaleData(localePt)
 
@@ -35,6 +36,7 @@ registerLocaleData(localePt)
     HeaderComponent,
     FooterComponent,
     NavComponent,
+    FormaPagamentoCrudComponent,
   ],
   imports: [
     BrowserModule,
