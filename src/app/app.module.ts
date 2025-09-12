@@ -29,6 +29,10 @@ import { NavComponent } from './components/template/nav/nav.component';
 import { FormaPagamentoCrudComponent } from './views/forma-pagamento-crud/forma-pagamento-crud.component';
 import { ProdutoCrudComponent } from './views/produto-crud/produto-crud.component';
 import { FornecedorCrudComponent } from './views/fornecedor-crud/fornecedor-crud.component';
+import { FormaPagamentoCreateComponent } from './components/formaPagamento/forma-pagamento-create/forma-pagamento-create.component';
+import { FornecedorCreateComponent } from './components/fornecedor/fornecedor-create/fornecedor-create.component';
+import { ProdutoCreateComponent } from './components/produto/produto-create/produto-create.component';
+import { FormaPagamentoCreateclsComponent } from './components/formaPagamento/forma-pagamento-createcls/forma-pagamento-createcls.component';
 
 registerLocaleData(localePt)
 
@@ -41,6 +45,10 @@ registerLocaleData(localePt)
     FormaPagamentoCrudComponent,
     ProdutoCrudComponent,
     FornecedorCrudComponent,
+    FormaPagamentoCreateComponent,
+    FornecedorCreateComponent,
+    ProdutoCreateComponent,
+    FormaPagamentoCreateclsComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,36 @@
+<mat-card>
+    <mat-card-title>Nova Forma de Pagamento</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Descrição" [(ngModel)]= "formaPagamento.proDescricao" name="proDescricao">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Tipo de agamento" [(ngModel)]= "formaPagamento.proTipo" name="proTipo">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Numero de parcelas" [(ngModel)]= "formaPagamento.proNumero_Parcelas" name="proNumero_Parcelas">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Dias entre as parcelas" [(ngModel)]= "formaPagamento.proDias_Entre_Parcelas" name="proDias_Entre_Parcelas">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Permitir troco ?" [(ngModel)]= "formaPagamento.proPermite_Troco" name="proPermite_Troco">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Taxa percentual" [(ngModel)]= "formaPagamento.proTaxa_Percentual" name="proTaxa_Percentual">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Ativo ?" [(ngModel)]= "formaPagamento.proAtivo" name="proAtivo">
+        </mat-form-field>
+
+    </form>
+
+    <button mat-raised-button (click)="createFormaPagamento()" color="primary">
+        Salvar
+    </button>
+   
+    <button mat-raised-button (click)="cancel()">
+        Cancelar
+    </button>
+
+</mat-card>

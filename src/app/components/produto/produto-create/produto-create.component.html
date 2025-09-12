@@ -1,0 +1,68 @@
+<mat-card>
+    <mat-card-title>Novo Produto</mat-card-title>
+    <form>
+      <mat-form-field>
+        <input matInput placeholder="Nome" [(ngModel)]="produto.nome" name="nome">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Descrição" [(ngModel)]="produto.descricao" name="descricao">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Código de Barras" [(ngModel)]="produto.codigo_barras" name="codigo_barras">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Referência" [(ngModel)]="produto.referencia" name="referencia">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Unidade de Medida" [(ngModel)]="produto.unidade_medida" name="unidade_medida">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Marca" [(ngModel)]="produto.marca" name="marca">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Categoria" [(ngModel)]="produto.categoria" name="categoria">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Preço de Custo" [(ngModel)]="produto.preco_custo" name="preco_custo">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Preço de Venda" [(ngModel)]="produto.preco_venda" name="preco_venda">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Estoque Atual" [(ngModel)]="produto.estoque_atual" name="estoque_atual">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Estoque Mínimo" [(ngModel)]="produto.estoque_minimo" name="estoque_minimo">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Estoque Máximo" [(ngModel)]="produto.estoque_maximo" name="estoque_maximo">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Localização" [(ngModel)]="produto.localizacao" name="localizacao">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Data de Validade" [(ngModel)]="produto.data_validade" name="data_validade">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Fornecedor ID" [(ngModel)]="produto.fornecedor_id" name="fornecedor_id">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Ativo?" [(ngModel)]="produto.ativo" name="ativo">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Data de Cadastro" [(ngModel)]="produto.data_cadastro" name="data_cadastro">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Observações" [(ngModel)]="produto.observacoes" name="observacoes">
+      </mat-form-field>
+    </form>
+  
+    <button mat-raised-button (click)="createProduto()" color="primary">
+      Salvar
+    </button>
+  
+    <button mat-raised-button (click)="cancel()">
+      Cancelar
+    </button>
+  </mat-card>
+  
