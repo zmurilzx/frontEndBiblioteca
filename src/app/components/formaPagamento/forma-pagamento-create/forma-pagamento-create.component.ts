@@ -7,9 +7,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormaPagamentoCreateComponent implements OnInit {
 
+  formaPagamento = {
+    proDescricao: '',
+    proTipo: '',
+    proNumero_Parcelas: null,
+    proDias_Entre_Parcelas: null,
+    proPermite_Troco: null,
+    proTaxa_Percentual: null,
+    proAtivo: null
+  };
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  createFormaPagamento(): void {
+    // Lógica para criar a forma de pagamento
+    console.log(this.formaPagamento);
+  }
+
+  cancel(): void {
+    // Lógica para cancelar
+    console.log('Cancelado');
+  }
 }

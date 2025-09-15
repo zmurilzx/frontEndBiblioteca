@@ -7,9 +7,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FornecedorCreateComponent implements OnInit {
 
+  fornecedor = {
+    proNomeFantasia: '',
+    proCnpj: '',
+    proRazaoSocial: ''
+  };
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  createFornecedor(): void {
+    // Lógica para criar o fornecedor
+    console.log(this.fornecedor);
+  }
+
+  cancel(): void {
+    // Lógica para cancelar
+    console.log('Cancelado');
+  }
 }

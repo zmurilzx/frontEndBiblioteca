@@ -32,7 +32,6 @@ import { FornecedorCrudComponent } from './views/fornecedor-crud/fornecedor-crud
 import { FormaPagamentoCreateComponent } from './components/formaPagamento/forma-pagamento-create/forma-pagamento-create.component';
 import { FornecedorCreateComponent } from './components/fornecedor/fornecedor-create/fornecedor-create.component';
 import { ProdutoCreateComponent } from './components/produto/produto-create/produto-create.component';
-import { FormaPagamentoCreateclsComponent } from './components/formaPagamento/forma-pagamento-createcls/forma-pagamento-createcls.component';
 
 registerLocaleData(localePt)
 
@@ -48,7 +47,6 @@ registerLocaleData(localePt)
     FormaPagamentoCreateComponent,
     FornecedorCreateComponent,
     ProdutoCreateComponent,
-    FormaPagamentoCreateclsComponent,
   ],
   imports: [
     BrowserModule,

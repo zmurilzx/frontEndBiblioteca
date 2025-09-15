@@ -1,5 +1,5 @@
 .footer{
-    background-color: black;
+    background-color: rgb(0, 0, 0);
     /*posição fixa*/
     position: fixed;
     /*coloca toolbar na parte de baixa */
@@ -10,7 +10,7 @@
 }
 
 .footer > span{
-    color:black;
+    color: #ff008c;
     font-size: 1.1rem;
     font-weight: 300;
 }
