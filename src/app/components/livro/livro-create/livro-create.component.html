@@ -1,0 +1,41 @@
+<mat-card>
+    <mat-card-title>Novo Livro</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="" [(ngModel)]="livro.proLiFornecedor" name="proLiFornecedor">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="" [(ngModel)]="livro.proLiNome" name="proLiNome">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="" [(ngModel)]="livro.proLiDescricao" name="proLiDescricao">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="" [(ngModel)]="livro.proLiAvaliacao" name="proLiAvaliacao">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="" [(ngModel)]="livro.proLiNumeropagi" name="proLiNumeropagi">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="" [(ngModel)]="livro.proLiIdioma" name="proLiIdioma">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="" [(ngModel)]="livro.proLiDataPubli" name="proLiDataPubli">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="" [(ngModel)]="livro.proLiDimensoes" name="proLiDimensoes">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="" [(ngModel)]="livro.proLiAutor" name="proLiAutor">
+        </mat-form-field>
+    </form>
+
+    <button mat-raised-button (click)="createLivro()" color="primary">
+        Salvar
+    </button>
+   
+    <button mat-raised-button (click)="cancel()">
+        Cancelar
+    </button>
+
+</mat-card>
