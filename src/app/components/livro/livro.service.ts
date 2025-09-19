@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
-import { livro } from './livro.model';
+import { Livro } from './livro.model';
 
 @Injectable({
   providedIn: 'root'
@@ -21,26 +21,26 @@ export class LivroService {
     });
   }
 
-  create(livro: livro): Observable<livro> {
-    return this.http.post<livro>(this.baseUrl, livro);
+  create(livro: Livro): Observable<Livro> {
+    return this.http.post<Livro>(this.baseUrl, livro);
   }
 
-  read(): Observable<livro[]> {
-    return this.http.get<livro[]>(this.baseUrl);
+  read(): Observable<Livro[]> {
+    return this.http.get<Livro[]>(this.baseUrl);
   }
 
-  readById(proId: string): Observable<livro> {
+  readById(proId: string): Observable<Livro> {
     const url = `${this.baseUrl}/${proId}`;
-    return this.http.get<livro>(url);
+    return this.http.get<Livro>(url);
   }
 
-  update(livro: livro): Observable<livro> {
+  update(livro: Livro): Observable<Livro> {
     const url = `${this.baseUrl}/${livro.proId}`;
-    return this.http.put<livro>(url, livro);
+    return this.http.put<Livro>(url, livro);
   }
 
-  delete(proId: number): Observable<livro> {
+  delete(proId: number): Observable<Livro> {
     const url = `${this.baseUrl}/${proId}`;
-    return this.http.delete<livro>(url);
+    return this.http.delete<Livro>(url);
   }
 }

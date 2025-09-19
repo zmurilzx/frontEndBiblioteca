@@ -8,24 +8,25 @@ import { Component, OnInit } from '@angular/core';
 export class ProdutoCreateComponent implements OnInit {
 
   produto = {
-    nome: '',
-    descricao: '',
-    codigo_barras: '',
-    referencia: '',
-    unidade_medida: '',
-    marca: '',
-    categoria: '',
-    preco_custo: null,
-    preco_venda: null,
-    estoque_atual: null,
-    estoque_minimo: null,
-    estoque_maximo: null,
-    localizacao: '', // << Adicione esta linha
-    data_validade: null, // << Adicione esta linha
-    fornecedor_id: null, // << Adicione esta linha
-    ativo: null, // << Adicione esta linha
-    data_cadastro: null, // << Adicione esta linha
-    observacoes: '' // << Adicione esta linha
+proId: '',
+proNome:'',
+proDescricao:'',
+proCodigo_barras:'',
+proReferencia:'',
+proUnidade_medida:'',
+proMarca:'',
+proCategoria:'',
+proPreco_custo:'',
+proPreco_venda:'',
+proEstoque_atual:'',
+proEstoque_minimo:'',
+proEstoque_maximo:'',
+proLocalizacao:'',
+proData_validade:'',
+proFornecedor_id:'',
+proAtivo:'',
+proData_cadastro:'',
+proObservacoes:'',
   };
 
   constructor() { }

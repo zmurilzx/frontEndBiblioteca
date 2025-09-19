@@ -1,4 +1,4 @@
-export interface   livro{
+export interface   Livro{
     proId: number
     proLiFornecedor: string
     proLiNome:string
