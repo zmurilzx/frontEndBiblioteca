@@ -44,8 +44,12 @@
         <input matInput placeholder="Data de Validade" [(ngModel)]="produto.proData_validade" name="proData_validade">
       </mat-form-field>
       <mat-form-field>
-        <input matInput placeholder="Fornecedor ID" [(ngModel)]="produto.proFornecedor_id" name="proFornecedor_id">
-      </mat-form-field>
+        <mat-select placeholder="Fornecedor" [(ngModel)]="produto.proFornecedor_id" name="proFornecedor_id">
+          <mat-option *ngFor="let proFornecedor_id of fornecedor" [value]="proFornecedor_id">
+            {{ proFornecedor_id.proNomeFantasia }} - {{ proFornecedor_id.proRazaoSocial }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>      
       <mat-form-field>
         <input matInput placeholder="Ativo?" [(ngModel)]="produto.proAtivo" name="proAtivo">
       </mat-form-field>

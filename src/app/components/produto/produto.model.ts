@@ -1,3 +1,5 @@
+import { Fornecedor } from "../fornecedor/fornecedor.model"
+
 export interface   Produto{
 proId: number
 proNome:string
@@ -14,7 +16,7 @@ proEstoque_minimo:Number
 proEstoque_maximo:number
 proLocalizacao:string
 proData_validade:Date
-proFornecedor_id:number
+proFornecedor_id?: Fornecedor
 proAtivo:string
 proData_cadastro:Date
 proObservacoes:string

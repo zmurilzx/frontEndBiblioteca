@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Fornecedor } from '../../fornecedor/fornecedor.model';
+import { ProdutoService } from '../produto.service';
+import { FornecedorService } from '../../fornecedor/fornecedor.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-produto-create',
@@ -23,19 +27,26 @@ proEstoque_minimo:'',
 proEstoque_maximo:'',
 proLocalizacao:'',
 proData_validade:'',
-proFornecedor_id:'',
+proFornecedor_id: undefined,
 proAtivo:'',
 proData_cadastro:'',
 proObservacoes:'',
   };
 
-  constructor() { }
+  fornecedor: Fornecedor[] = [];
+
+  constructor(private produtoService: ProdutoService,
+    private fornecedorService: FornecedorService,
+    private router: Router) { }
 
   ngOnInit(): void {
+    this.fornecedorService.read().subscribe(fornecedor => {
+      this.fornecedor = fornecedor
+    }
+    )
   }
 
   createProduto(): void {
-    // Lógica para criar o produto
     console.log(this.produto);
   }
 

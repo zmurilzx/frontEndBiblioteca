@@ -10,7 +10,7 @@ import { Produto } from '../produto.model';
 export class ProdutoReadComponent implements OnInit {
 
   produto!: Produto[]
-  displayedColumns = ['proNome', 'proDescricao',  'proMarca','proPreco_venda','proData_validade' ,   'proObservacoes']
+  displayedColumns = ['proId','proNome', 'proDescricao',  'proMarca','proPrecoVenda','proData_validade', 'proObservacoes', 'action']
 
   constructor(private produtoService: ProdutoService) { }
 
