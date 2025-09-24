@@ -1,12 +1,12 @@
-export interface   Livro{
-    proId: number
-    proLiFornecedor: string
-    proLiNome:string
-    proLiDescricao:string
-    proLiAvaliacao:string
-    proLiNumeropagi:number
-    proLiIdioma:string
-    proLiDataPubli:string
-    proLiDimensoes:string
-    proLiAutor:string
-  }
+export interface Livro {
+  LiId: number;
+  LiFornecedor: string;
+  LiNome: string;
+  LiDescricao: string;
+  LiAvaliacao: string;
+  LiNumeropagi: string;
+  LiIdioma: string;
+  LiDataPubli: string;
+  LiDimensoes: string;
+  LiAutor: string;
+}

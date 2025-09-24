@@ -38,6 +38,8 @@ import { ClienteCreateComponent } from './components/cliente/cliente-create/clie
 import { LivroCrudComponent } from './views/livro-crud/livro-crud.component';
 import { LivroCreateComponent } from './components/livro/livro-create/livro-create.component';
 import { ProdutoReadComponent } from './components/produto/produto-read/produto-read.component';
+import { LivroReadComponent } from './components/livro/livro-read/livro-read.component';
+import { FornecedorReadComponent } from './components/fornecedor/fornecedor-read/fornecedor-read.component';
 
 registerLocaleData(localePt)
 
@@ -58,6 +60,8 @@ registerLocaleData(localePt)
     LivroCrudComponent,
     LivroCreateComponent,
     ProdutoReadComponent,
+    LivroReadComponent,
+    FornecedorReadComponent,
   ],
   imports: [
     BrowserModule,

@@ -8,9 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class FornecedorCreateComponent implements OnInit {
 
   fornecedor = {
-    proNomeFantasia: '',
-    proCnpj: '',
-    proRazaoSocial: ''
+    fNomeFantasia: '',
+    fCnpj: '',
+    fRazaoSocial: ''
   };
 
   constructor() { }

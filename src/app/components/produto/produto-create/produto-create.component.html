@@ -46,7 +46,7 @@
       <mat-form-field>
         <mat-select placeholder="Fornecedor" [(ngModel)]="produto.proFornecedor_id" name="proFornecedor_id">
           <mat-option *ngFor="let proFornecedor_id of fornecedor" [value]="proFornecedor_id">
-            {{ proFornecedor_id.proNomeFantasia }} - {{ proFornecedor_id.proRazaoSocial }}
+            {{ proFornecedor_id.fNomeFantasia }} - {{ proFornecedor_id.fRazaoSocial }}
           </mat-option>
         </mat-select>
       </mat-form-field>      

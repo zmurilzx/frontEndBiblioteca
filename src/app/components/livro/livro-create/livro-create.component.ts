@@ -8,15 +8,15 @@ import { Component, OnInit } from '@angular/core';
 export class LivroCreateComponent implements OnInit {
 
   livro = {
-    proLiFornecedor: '',
-    proLiNome: '',
-    proLiDescricao: '',
-    proLiAvaliacao:'',
-    proLiNumeropagi:'',
-    proLiIdioma:'',
-    proLiDataPubli:'',
-    proLiDimensoes:'',
-    proLiAutor:''
+    LiFornecedor: '',
+    LiNome: '',
+    LiDescricao: '',
+    LiAvaliacao:'',
+    LiNumeropagi:'',
+    LiIdioma:'',
+    LiDataPubli:'',
+    LiDimensoes:'',
+    LiAutor:''
   };
 
   constructor() { }
