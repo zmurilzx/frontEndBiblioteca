@@ -8,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class ClienteCreateComponent implements OnInit {
 
   cliente = {
-    proCliNome: '',
-    proCliCpf: ''
+    cliNome: '',
+    cliCpf: ''
   };
 
   constructor() { }

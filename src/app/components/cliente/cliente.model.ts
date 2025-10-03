@@ -1,5 +1,5 @@
 export interface Cliente{
-    proId: number
-    proNome: string
-    proCpf: string
+    cliId: number
+    cliNome: string
+    cliCpf: string
 }

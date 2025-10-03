@@ -1,11 +1,11 @@
 export interface FormaPagamento{
-    proId: number
-    proDescricao: string
-    proTipo: number
-    proNumero_Parcelas: number
-    proDias_Entre_Parcelas: number
-    proPermite_Troco: string    
-    proTaxa_Percentual:number
-    proAtivo:string
+    FId: number
+    descricao: string
+    tipo: string
+    numero_parcelas: number
+    dias_entre_parcelas: number
+    permite_troco: string    
+    taxa_percentual:number
+    ativo:string
 
 }

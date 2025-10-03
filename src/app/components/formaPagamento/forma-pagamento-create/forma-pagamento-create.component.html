@@ -2,30 +2,30 @@
     <mat-card-title>Nova Forma de Pagamento</mat-card-title>
     <form>
         <mat-form-field>
-            <input matInput placeholder="Descrição" [(ngModel)]= "formaPagamento.proDescricao" name="proDescricao">
+            <input matInput placeholder="Descrição" [(ngModel)]= "formaPagamento.descricao" name="descricao">
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="Tipo de pagamento" [(ngModel)]= "formaPagamento.proTipo" name="proTipo">
+            <input matInput placeholder="Tipo de pagamento" [(ngModel)]= "formaPagamento.tipo" name="tipo">
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="Numero de parcelas" [(ngModel)]= "formaPagamento.proNumero_Parcelas" name="proNumero_Parcelas">
+            <input matInput placeholder="Numero de parcelas" [(ngModel)]= "formaPagamento.numero_parcelas" name="numero_parcelas">
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="Dias entre as parcelas" [(ngModel)]= "formaPagamento.proDias_Entre_Parcelas" name="proDias_Entre_Parcelas">
+            <input matInput placeholder="Dias entre as parcelas" [(ngModel)]= "formaPagamento.dias_entre_parcelas" name="dias_entre_parcelas">
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="Permitir troco ?" [(ngModel)]= "formaPagamento.proPermite_Troco" name="proPermite_Troco">
+            <input matInput placeholder="Permitir troco ?" [(ngModel)]= "formaPagamento.permite_troco" name="permite_troco">
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="Taxa percentual" [(ngModel)]= "formaPagamento.proTaxa_Percentual" name="proTaxa_Percentual">
+            <input matInput placeholder="Taxa percentual" [(ngModel)]= "formaPagamento.taxa_percentual" name="taxa_percentual">
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="Ativo ?" [(ngModel)]= "formaPagamento.proAtivo" name="proAtivo">
+            <input matInput placeholder="Ativo ?" [(ngModel)]= "formaPagamento.ativo" name="ativo">
         </mat-form-field>
 
     </form>
 
-    <button mat-raised-button (click)="createFormaPagamento()" color="primary">
+    <button mat-raised-button (click)="createFormaPagamento()">
         Salvar
     </button>
    
@@ -34,3 +34,4 @@
     </button>
 
 </mat-card>
+

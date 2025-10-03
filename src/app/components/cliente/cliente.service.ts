@@ -30,18 +30,18 @@ export class ClienteService {
     return this.http.get<Cliente[]>(this.baseUrl);
   }
 
-  readById(proId: string): Observable<Cliente> {
-    const url = `${this.baseUrl}/${proId}`;
+  readById(cliId: string): Observable<Cliente> {
+    const url = `${this.baseUrl}/${cliId}`;
     return this.http.get<Cliente>(url);
   }
 
   update(cliente: Cliente): Observable<Cliente> {
-    const url = `${this.baseUrl}/${cliente.proId}`;
+    const url = `${this.baseUrl}/${cliente.cliId}`;
     return this.http.put<Cliente>(url, cliente);
   }
 
-  delete(proId: number): Observable<Cliente> {
-    const url = `${this.baseUrl}/${proId}`;
+  delete(cliId: number): Observable<Cliente> {
+    const url = `${this.baseUrl}/${cliId}`;
     return this.http.delete<Cliente>(url);
   }
 }

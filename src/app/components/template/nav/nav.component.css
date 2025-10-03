@@ -1,15 +1,16 @@
 .sidenav{
-    background-color: #5ddbc0;
+    background-color: #4E342E ;
     width: 200px;
 }
 .sidenav a{
-    color: #000000;
+    color: #FFD700;
 }
 .sidenav i{
     padding-right: 10px;
 }
 
-.content{
-    padding: 16px;
-    background-color: #ffffff;
-}
+:host {
+    display: flex;
+    height: 100vh;
+    background: #F5F5DC; /* Usa sua cor bege claro (#F5F5DC) */
+  }
