@@ -40,6 +40,7 @@ import { LivroCreateComponent } from './components/livro/livro-create/livro-crea
 import { ProdutoReadComponent } from './components/produto/produto-read/produto-read.component';
 import { LivroReadComponent } from './components/livro/livro-read/livro-read.component';
 import { FornecedorReadComponent } from './components/fornecedor/fornecedor-read/fornecedor-read.component';
+import { ClienteReadComponent } from './components/cliente/cliente-read/cliente-read.component';
 
 registerLocaleData(localePt)
 
@@ -62,6 +63,7 @@ registerLocaleData(localePt)
     ProdutoReadComponent,
     LivroReadComponent,
     FornecedorReadComponent,
+    ClienteReadComponent,
   ],
   imports: [
     BrowserModule,

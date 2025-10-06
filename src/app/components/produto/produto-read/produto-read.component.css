@@ -1,7 +1,11 @@
-table{
+table {
     width: 100%;
     background-color: rgb(75, 75, 75);
+    
+    /* Adicione esta linha para mover a tabela para baixo */
+    margin-top: 1000px; 
 }
+
 .edit > i{
     color: rgb(247, 247, 247);
 }
@@ -9,3 +13,4 @@ table{
 .delete > i{
     color: rgb(255, 0, 98);
 }
+
