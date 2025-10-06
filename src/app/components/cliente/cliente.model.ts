@@ -1,5 +1,5 @@
 export interface Cliente{
     cliId: number
-    cliNome: string
-    cliCpf: string
+    CliNome: string
+    CliCpf: string
 }

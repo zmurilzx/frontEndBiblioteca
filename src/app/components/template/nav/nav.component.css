@@ -1,5 +1,5 @@
 .sidenav{
-    background-color: #4E342E ;
+    background-color: #4E342E;
     width: 200px;
 }
 .sidenav a{
@@ -9,8 +9,7 @@
     padding-right: 10px;
 }
 
-:host {
-    display: flex;
-    height: 100vh;
-    background: #F5F5DC; /* Usa sua cor bege claro (#F5F5DC) */
-  }
+.content{
+    padding: 16px;
+    background-color:#4E342E;
+}
