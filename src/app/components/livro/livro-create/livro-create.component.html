@@ -1,41 +1,51 @@
-<mat-card>
+<mat-card class="livro-card">
     <mat-card-title>Novo Livro</mat-card-title>
-    <form>
-        <mat-form-field>
-            <input matInput placeholder="Editora" [(ngModel)]="livro.LiFornecedor" name="LiFornecedor">
+    
+    <form class="centered-form">
+        <mat-form-field class="full-width-field">
+            <input matInput placeholder="Editora" [(ngModel)]="livro.liFornecedor" name="liFornecedor">
         </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Nome do livro" [(ngModel)]="livro.LiNome" name="LiNome">
+        
+        <mat-form-field class="full-width-field">
+            <input matInput placeholder="Nome do livro" [(ngModel)]="livro.liNome" name="liNome">
         </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="descrição do livro" [(ngModel)]="livro.LiDescricao" name="LiDescricao">
+        
+        <mat-form-field class="full-width-field">
+            <input matInput placeholder="Descrição do livro" [(ngModel)]="livro.liDescricao" name="liDescricao">
         </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Avaliação" [(ngModel)]="livro.LiAvaliacao" name="LiAvaliacao">
+        
+        <mat-form-field class="full-width-field">
+            <input matInput placeholder="Avaliação" [(ngModel)]="livro.liAvaliacao" name="liAvaliacao">
         </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Numero de paginas" [(ngModel)]="livro.LiNumeropagi" name="LiNumeropagi">
+        
+        <mat-form-field class="full-width-field">
+            <input matInput placeholder="Número de páginas" [(ngModel)]="livro.liNumeropagi" name="liNumeropagi">
         </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Idioma" [(ngModel)]="livro.LiIdioma" name="LiIdioma">
+        
+        <mat-form-field class="full-width-field">
+            <input matInput placeholder="Idioma" [(ngModel)]="livro.liIdioma" name="liIdioma">
         </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Data de publicação" [(ngModel)]="livro.LiDataPubli" name="LiDataPubli">
+        
+        <mat-form-field class="full-width-field">
+            <input matInput placeholder="Data de publicação" [(ngModel)]="livro.liDataPubli" name="liDataPubli">
         </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="dimenções (tamanho)" [(ngModel)]="livro.LiDimensoes" name="LiDimensoes">
+        
+        <mat-form-field class="full-width-field">
+            <input matInput placeholder="Dimensões (tamanho)" [(ngModel)]="livro.liDimensoes" name="liDimensoes">
         </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Autor" [(ngModel)]="livro.LiAutor" name="LiAutor">
+        
+        <mat-form-field class="full-width-field">
+            <input matInput placeholder="Autor" [(ngModel)]="livro.liAutor" name="liAutor">
         </mat-form-field>
     </form>
 
-    <button mat-raised-button (click)="createLivro()" color="primary">
-        Salvar
-    </button>
-   
-    <button mat-raised-button (click)="cancel()">
-        Cancelar
-    </button>
-
+    <div class="button-container">
+        <button mat-raised-button class="salvar-btn" (click)="createLivro()" color="primary">
+            Salvar
+        </button>
+        
+        <button mat-raised-button class="cancelar-btn" (click)="cancel()">
+            Cancelar
+        </button>
+    </div>
 </mat-card>

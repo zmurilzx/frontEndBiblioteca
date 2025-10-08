@@ -8,26 +8,26 @@
 
       <ng-container matColumnDef="LiFornecedor">
         <th mat-header-cell *matHeaderCellDef>Editora</th>
-        <td mat-cell *matCellDef="let row">{{row.LiFornecedor}}</td>
+        <td mat-cell *matCellDef="let row">{{row.liFornecedor}}</td>
       </ng-container>
 
       <ng-container matColumnDef="LiNome">
         <th mat-header-cell *matHeaderCellDef>Nome do livro</th>
-        <td mat-cell *matCellDef="let row">{{row.LiNome}}</td>
+        <td mat-cell *matCellDef="let row">{{row.liNome}}</td>
       </ng-container>
 
       <ng-container matColumnDef="LiNumeropagi">
         <th mat-header-cell *matHeaderCellDef>numero de paginas</th>
-        <td mat-cell *matCellDef="let row">{{row.LiNumeropagi}}</td>
+        <td mat-cell *matCellDef="let row">{{row.liNumeropagi}}</td>
       </ng-container>
 
       <ng-container matColumnDef="action">
         <th mat-header-cell *matHeaderCellDef>Ações</th>                    
         <td mat-cell *matCellDef="let row">
-          <a routerLink="/livro/update/{{ row.LiId }}" class="edit">
+          <a routerLink="/livro/update/{{ row.liId }}" class="edit">
             <i class="material-icons">edit</i>
           </a>
-          <a routerLink="/livro/delete/{{ row.LiId }}" class="delete">
+          <a routerLink="/livro/delete/{{ row.liId }}" class="delete">
             <i class="material-icons">delete</i>
           </a>
         </td>

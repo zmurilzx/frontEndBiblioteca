@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Cliente } from '../cliente.model';
+import { ClienteService } from '../cliente.service';
 
 @Component({
   selector: 'app-cliente-read',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClienteReadComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
+    cliente!: Cliente[]
+    displayedColumns: string[] = ['CliId', 'CliCpf', 'CliNome', 'action'];
+  
+    constructor(private clienteService: ClienteService) { }
+  
+    ngOnInit(): void {
+      this.clienteService.read().subscribe(cliente => {
+        this.cliente = cliente
+        console.log(cliente)  
+      })
+    }
+  
   }
-
-}
