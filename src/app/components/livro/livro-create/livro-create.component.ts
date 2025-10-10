@@ -31,11 +31,11 @@ export class LivroCreateComponent {
   createLivro(): void {
     this.livroService.create(this.livro).subscribe(() => {
       this.livroService.showMessage('📚 Livro cadastrado com sucesso!');
-      this.router.navigate(['/livros']);
+      this.router.navigate(['/livro']);
     });
   }
 
   cancel(): void {
-    this.router.navigate(['/livros']);
+    this.router.navigate(['/livro']);
   }
 }

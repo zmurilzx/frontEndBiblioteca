@@ -9,7 +9,7 @@ import { Livro } from './livro.model';
 })
 export class LivroService {
 
-  baseUrl: string = "http://localhost:8080/livro";
+  baseUrl: string = "http://localhost:8080/livros";
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
 
