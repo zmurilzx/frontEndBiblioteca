@@ -1,6 +1,8 @@
+import { Fornecedor } from "../fornecedor/fornecedor.model";
+
 export interface Livro {
   liId: number;
-  liFornecedor: string;
+  fornecedor_id?: Fornecedor;
   liNome: string;
   liDescricao: string;
   liAvaliacao: number;

@@ -1,0 +1,51 @@
+<mat-card>
+    <mat-card-header>
+      <mat-card-title>Criar Endereço</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form #enderecoForm="ngForm">
+        <!-- Cliente (assuming foreign key to client) -->
+        <mat-form-field appearance="fill">
+          <mat-label>Cliente</mat-label>
+          <input matInput placeholder="ID do Cliente" [(ngModel)]="endereco.clienteId" name="clienteId" type="number" required>
+        </mat-form-field>
+  
+        <!-- Rua -->
+        <mat-form-field appearance="fill">
+          <mat-label>Rua</mat-label>
+          <input matInput placeholder="Rua" [(ngModel)]="endereco.rua" name="rua" required>
+        </mat-form-field>
+  
+        <!-- Número -->
+        <mat-form-field appearance="fill">
+          <mat-label>Número</mat-label>
+          <input matInput placeholder="Número" [(ngModel)]="endereco.numero" name="numero" type="number">
+        </mat-form-field>
+  
+        <!-- Cidade -->
+        <mat-form-field appearance="fill">
+          <mat-label>Cidade</mat-label>
+          <input matInput placeholder="Cidade" [(ngModel)]="endereco.cidade" name="cidade" required>
+        </mat-form-field>
+  
+        <!-- Estado -->
+        <mat-form-field appearance="fill">
+          <mat-label>Estado</mat-label>
+          <input matInput placeholder="Estado (UF)" [(ngModel)]="endereco.estado" name="estado" maxlength="2">
+        </mat-form-field>
+  
+        <!-- CEP -->
+        <mat-form-field appearance="fill">
+          <mat-label>CEP</mat-label>
+          <input matInput placeholder="CEP" [(ngModel)]="endereco.cep" name="cep" pattern="\d{5}-?\d{3}">
+        </mat-form-field>
+  
+        <!-- Ativo (boolean flag, common for entities) -->
+        <mat-checkbox [(ngModel)]="endereco.ativo" name="ativo">Ativo?</mat-checkbox>
+      </form>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="createEndereco()" [disabled]="!enderecoForm.valid">Criar</button>
+      <button mat-raised-button (click)="cancel()">Cancelar</button>
+    </mat-card-actions>
+  </mat-card>

@@ -28,19 +28,17 @@ import { HeaderComponent } from './components/template/header/header.component';
 import { FooterComponent } from './components/template/footer/footer.component';
 import { NavComponent } from './components/template/nav/nav.component';
 import { FormaPagamentoCrudComponent } from './views/forma-pagamento-crud/forma-pagamento-crud.component';
-import { ProdutoCrudComponent } from './views/produto-crud/produto-crud.component';
 import { FornecedorCrudComponent } from './views/fornecedor-crud/fornecedor-crud.component';
 import { FormaPagamentoCreateComponent } from './components/formaPagamento/forma-pagamento-create/forma-pagamento-create.component';
 import { FornecedorCreateComponent } from './components/fornecedor/fornecedor-create/fornecedor-create.component';
-import { ProdutoCreateComponent } from './components/produto/produto-create/produto-create.component';
 import { ClienteCrudComponent } from './views/cliente-crud/cliente-crud.component';
 import { ClienteCreateComponent } from './components/cliente/cliente-create/cliente-create.component';
 import { LivroCrudComponent } from './views/livro-crud/livro-crud.component';
 import { LivroCreateComponent } from './components/livro/livro-create/livro-create.component';
-import { ProdutoReadComponent } from './components/produto/produto-read/produto-read.component';
 import { LivroReadComponent } from './components/livro/livro-read/livro-read.component';
 import { FornecedorReadComponent } from './components/fornecedor/fornecedor-read/fornecedor-read.component';
 import { ClienteReadComponent } from './components/cliente/cliente-read/cliente-read.component';
+import { EnderecoCreateComponent } from './components/endereco/endereco-create/endereco-create.component';
 
 registerLocaleData(localePt)
 
@@ -51,19 +49,17 @@ registerLocaleData(localePt)
     FooterComponent,
     NavComponent,
     FormaPagamentoCrudComponent,
-    ProdutoCrudComponent,
     FornecedorCrudComponent,
     FormaPagamentoCreateComponent,
     FornecedorCreateComponent,
-    ProdutoCreateComponent,
     ClienteCrudComponent,
     ClienteCreateComponent,
     LivroCrudComponent,
     LivroCreateComponent,
-    ProdutoReadComponent,
     LivroReadComponent,
     FornecedorReadComponent,
     ClienteReadComponent,
+    EnderecoCreateComponent,
   ],
   imports: [
     BrowserModule,
@@ -92,3 +88,4 @@ registerLocaleData(localePt)
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
