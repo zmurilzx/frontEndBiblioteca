@@ -9,7 +9,7 @@ import { FormaPagamento } from './formaPagamento.model';
 })
 export class FormaPagamentoService {
 
-  baseUrl: string = "http://localhost:8080/formapagamento";
+  baseUrl: string = "http://localhost:8080/formas-pagamento";
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
 

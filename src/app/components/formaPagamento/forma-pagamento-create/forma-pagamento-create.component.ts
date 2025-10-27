@@ -14,9 +14,9 @@ export class FormaPagamentoCreateComponent {
     FId: 0,
     descricao: '',
     tipo: '',
-    numero_parcelas: 0,
-    dias_entre_parcelas: 0,
-    permite_troco:  '',
+    numeroParcelas: 0,
+    diasEntreParcelas: 0,
+    permiteTroco:  '',
     taxa_percentual: 0,
     ativo: ''
   }

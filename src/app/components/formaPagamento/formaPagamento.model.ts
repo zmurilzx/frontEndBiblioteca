@@ -2,9 +2,9 @@ export interface FormaPagamento{
     FId: number
     descricao: string
     tipo: string
-    numero_parcelas: number
-    dias_entre_parcelas: number
-    permite_troco: string    
+    numeroParcelas: number
+    diasEntreParcelas: number
+    permiteTroco: string    
     taxa_percentual:number
     ativo:string
 
