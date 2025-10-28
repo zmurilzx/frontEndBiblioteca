@@ -1,43 +1,31 @@
 <mat-sidenav-container class="container">
-    <mat-sidenav class="sidenav" mode="side" opened fixedInViewport="true" fixedTopGap="64">
-        <mat-nav-list class="nav-list">
-            <a mat-list-item routerLink="/">
-                <i class="material-icons">
-                    account_balance
-                </i>
-                Início
-            </a>
-            <a mat-list-item routerLink="/fpagamentos">
-                <i class="material-icons">
-                    payments
-                </i>
-                Forma de Pagamento
-            </a>
-             <a mat-list-item routerLink="/fornecedor">
-                <i class="material-icons">
-                    <span class="material-symbols-outlined">
-                        person_4
-                        </span>
-                </i>
-                Fornecedores
-            </a>
-            <a mat-list-item routerLink="/cliente">
-                <i class="material-icons">
-                    man_2
-                </i>
-                Cliente
-            </a>
-            <a mat-list-item routerLink="/livro">
-                <i class="material-icons">
-                    menu_book
-                </i>
-                Livro
-            </a>
-            
-        </mat-nav-list>
-    </mat-sidenav>
-    <mat-sidenav-content class="content">
-        <!-- usamos para começar a trabalhar com a navegação a partir do clique... -->
-        <router-outlet></router-outlet>
-    </mat-sidenav-content>
+  <mat-sidenav class="sidenav" mode="side" opened fixedInViewport="true" fixedTopGap="64">
+    <mat-nav-list class="nav-list">
+      <a mat-list-item routerLink="/dashboard">
+        <mat-icon>dashboard</mat-icon>
+        Início
+      </a>
+      <a mat-list-item routerLink="/fpagamentos">
+        <mat-icon>payments</mat-icon>
+        Forma de Pagamento
+      </a>
+      <a mat-list-item routerLink="/fornecedor">
+        <mat-icon>local_shipping</mat-icon>
+        Fornecedores
+      </a>
+      <a mat-list-item routerLink="/cliente">
+        <mat-icon>group</mat-icon>
+        Clientes
+      </a>
+      <a mat-list-item routerLink="/livro">
+        <mat-icon>menu_book</mat-icon>
+        Livros
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content class="content">
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+  
 </mat-sidenav-container>
+

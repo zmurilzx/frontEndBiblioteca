@@ -3,13 +3,14 @@ import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
 import { Produto } from './produto.model';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProdutoService {
 
-  baseUrl: string = "http://localhost:8080/produto";
+  baseUrl: string = `${environment.apiUrl}/produto`;
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
 

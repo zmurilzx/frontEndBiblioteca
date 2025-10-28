@@ -21,6 +21,7 @@ import {MatInputModule} from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { MatIconModule } from '@angular/material/icon';
 
 import localePt from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
@@ -39,6 +40,7 @@ import { LivroReadComponent } from './components/livro/livro-read/livro-read.com
 import { FornecedorReadComponent } from './components/fornecedor/fornecedor-read/fornecedor-read.component';
 import { ClienteReadComponent } from './components/cliente/cliente-read/cliente-read.component';
 import { EnderecoCreateComponent } from './components/endereco/endereco-create/endereco-create.component';
+import { DashboardComponent } from './views/dashboard/dashboard.component';
 
 registerLocaleData(localePt)
 
@@ -79,7 +81,8 @@ registerLocaleData(localePt)
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    MatSelectModule
+    MatSelectModule,
+    MatIconModule
   ],
   providers: [{
     provide: LOCALE_ID,

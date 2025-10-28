@@ -3,13 +3,14 @@ import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
 import { Endereco } from './endereco.model';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EnderecoService {
 
-  baseUrl: string = "http://localhost:8080/endereco";
+  baseUrl: string = `${environment.apiUrl}/endereco`;
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
 

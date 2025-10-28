@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
 import { Cliente } from './cliente.model';
+import { environment } from '../../../environments/environment';
 
 
 @Injectable({
@@ -10,7 +11,7 @@ import { Cliente } from './cliente.model';
 })
 export class ClienteService {
 
-  baseUrl: string = "http://localhost:8080/cliente";
+  baseUrl: string = `${environment.apiUrl}/cliente`;
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
 

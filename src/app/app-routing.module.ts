@@ -8,38 +8,22 @@ import { ClienteCreateComponent } from './components/cliente/cliente-create/clie
 import { ClienteCrudComponent } from './views/cliente-crud/cliente-crud.component';
 import { LivroCrudComponent } from './views/livro-crud/livro-crud.component';
 import { LivroCreateComponent } from './components/livro/livro-create/livro-create.component';
+import { DashboardComponent } from './views/dashboard/dashboard.component';
 
 
 //configuração para rotear entre as paginas na home
 const routes: Routes = [
-  {
-    path: "fpagamentos",
-    component: FormaPagamentoCrudComponent
-  },
-
-  {path: "fornecedor",
-    component: FornecedorCrudComponent
-  },
-  {
-    path: "fpagamentos/create",
-    component: FormaPagamentoCreateComponent
-  },
-{path: "fornecedor/create",
-  component: FornecedorCreateComponent
-},
-  {path: "cliente/create",
-    component: ClienteCreateComponent
-  },
-  {path: "cliente",
-    component: ClienteCrudComponent
-  },
-  {path: "livro",
-    component: LivroCrudComponent
-  },
-  {path: "livro/create",
-    component: LivroCreateComponent
-  }
-
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'fpagamentos', component: FormaPagamentoCrudComponent },
+  { path: 'fpagamentos/create', component: FormaPagamentoCreateComponent },
+  { path: 'fornecedor', component: FornecedorCrudComponent },
+  { path: 'fornecedor/create', component: FornecedorCreateComponent },
+  { path: 'cliente', component: ClienteCrudComponent },
+  { path: 'cliente/create', component: ClienteCreateComponent },
+  { path: 'livro', component: LivroCrudComponent },
+  { path: 'livro/create', component: LivroCreateComponent },
+  { path: '**', redirectTo: 'dashboard' }
 ];
 
 @NgModule({

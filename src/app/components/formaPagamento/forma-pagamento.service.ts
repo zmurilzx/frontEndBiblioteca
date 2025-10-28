@@ -3,13 +3,14 @@ import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
 import { FormaPagamento } from './formaPagamento.model';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FormaPagamentoService {
 
-  baseUrl: string = "http://localhost:8080/formas-pagamento";
+  baseUrl: string = `${environment.apiUrl}/formas-pagamento`;
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
 
