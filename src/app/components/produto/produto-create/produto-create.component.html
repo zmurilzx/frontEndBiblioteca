@@ -1,72 +1,110 @@
-<mat-card>
-    <mat-card-title>Novo Produto</mat-card-title>
-    <form>
-      <mat-form-field>
-        <input matInput placeholder="Nome" [(ngModel)]="produto.nome" name="proNome">
+<mat-card class="form-card mat-elevation-z4">
+  <mat-card-header>
+    <mat-card-title>Novo produto</mat-card-title>
+    <mat-card-subtitle>Complete os dados do produto, estoque e fornecedor.</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <form class="form-grid" autocomplete="off">
+      <mat-form-field appearance="fill">
+        <mat-label>Nome</mat-label>
+        <input matInput [(ngModel)]="produto.nome" name="proNome">
       </mat-form-field>
-      <mat-form-field>
-        <input matInput placeholder="Descrição" [(ngModel)]="produto.descricao" name="proDescricao">
+
+      <mat-form-field appearance="fill">
+        <mat-label>Descrição</mat-label>
+        <input matInput [(ngModel)]="produto.descricao" name="proDescricao">
       </mat-form-field>
-      <mat-form-field>
-        <input matInput placeholder="Código de Barras" [(ngModel)]="produto.codigo_barras" name="proCodigo_barras">
+
+      <mat-form-field appearance="fill">
+        <mat-label>Código de barras</mat-label>
+        <input matInput [(ngModel)]="produto.codigo_barras" name="proCodigo_barras">
       </mat-form-field>
-      <mat-form-field>
-        <input matInput placeholder="Referência" [(ngModel)]="produto.referencia" name="proReferencia">
+
+      <mat-form-field appearance="fill">
+        <mat-label>Referência</mat-label>
+        <input matInput [(ngModel)]="produto.referencia" name="proReferencia">
       </mat-form-field>
-      <mat-form-field>
-        <input matInput placeholder="Unidade de Medida" [(ngModel)]="produto.unidade_medida" name="proUnidade_medida">
+
+      <mat-form-field appearance="fill">
+        <mat-label>Unidade de medida</mat-label>
+        <input matInput [(ngModel)]="produto.unidade_medida" name="proUnidade_medida">
       </mat-form-field>
-      <mat-form-field>
-        <input matInput placeholder="Marca" [(ngModel)]="produto.marca" name="proMarca">
+
+      <mat-form-field appearance="fill">
+        <mat-label>Marca</mat-label>
+        <input matInput [(ngModel)]="produto.marca" name="proMarca">
       </mat-form-field>
-      <mat-form-field>
-        <input matInput placeholder="Categoria" [(ngModel)]="produto.categoria" name="proCategoria">
+
+      <mat-form-field appearance="fill">
+        <mat-label>Categoria</mat-label>
+        <input matInput [(ngModel)]="produto.categoria" name="proCategoria">
       </mat-form-field>
-      <mat-form-field>
-        <input matInput placeholder="Preço de Custo" [(ngModel)]="produto.preco_custo" name="proPreco_custo">
+
+      <mat-form-field appearance="fill">
+        <mat-label>Preço de custo</mat-label>
+        <input matInput [(ngModel)]="produto.preco_custo" name="proPreco_custo">
       </mat-form-field>
-      <mat-form-field>
-        <input matInput placeholder="Preço de Venda" [(ngModel)]="produto.preco_venda" name="proPreco_venda">
+
+      <mat-form-field appearance="fill">
+        <mat-label>Preço de venda</mat-label>
+        <input matInput [(ngModel)]="produto.preco_venda" name="proPreco_venda">
       </mat-form-field>
-      <mat-form-field>
-        <input matInput placeholder="Estoque Atual" [(ngModel)]="produto.estoque_atual" name="proEstoque_atual">
+
+      <mat-form-field appearance="fill">
+        <mat-label>Estoque atual</mat-label>
+        <input matInput [(ngModel)]="produto.estoque_atual" name="proEstoque_atual">
       </mat-form-field>
-      <mat-form-field>
-        <input matInput placeholder="Estoque Mínimo" [(ngModel)]="produto.estoque_minimo" name="proEstoque_minimo">
+
+      <mat-form-field appearance="fill">
+        <mat-label>Estoque mínimo</mat-label>
+        <input matInput [(ngModel)]="produto.estoque_minimo" name="proEstoque_minimo">
       </mat-form-field>
-      <mat-form-field>
-        <input matInput placeholder="Estoque Máximo" [(ngModel)]="produto.estoque_maximo" name="proEstoque_maximo">
+
+      <mat-form-field appearance="fill">
+        <mat-label>Estoque máximo</mat-label>
+        <input matInput [(ngModel)]="produto.estoque_maximo" name="proEstoque_maximo">
       </mat-form-field>
-      <mat-form-field>
-        <input matInput placeholder="Localização" [(ngModel)]="produto.localizacao" name="proLocalizacao">
+
+      <mat-form-field appearance="fill" class="full-width-field">
+        <mat-label>Localização</mat-label>
+        <input matInput [(ngModel)]="produto.localizacao" name="proLocalizacao">
       </mat-form-field>
-      <mat-form-field>
-        <input matInput placeholder="Data de Validade" [(ngModel)]="produto.data_validade" name="proData_validade">
+
+      <mat-form-field appearance="fill">
+        <mat-label>Data de validade</mat-label>
+        <input matInput [(ngModel)]="produto.data_validade" name="proData_validade">
       </mat-form-field>
-      <mat-form-field>
-        <mat-select placeholder="Fornecedor" [(ngModel)]="produto.fornecedor_id" name="fornecedor_id">
+
+      <mat-form-field appearance="fill">
+        <mat-label>Fornecedor</mat-label>
+        <mat-select [(ngModel)]="produto.fornecedor_id" name="fornecedor_id">
           <mat-option *ngFor="let fornecedor_id of fornecedor" [value]="fornecedor_id">
             {{ fornecedor_id.NomeFantasia }} - {{ fornecedor_id.RazaoSocial }}
           </mat-option>
         </mat-select>
-      </mat-form-field>      
-      <mat-form-field>
-        <input matInput placeholder="Ativo?" [(ngModel)]="produto.ativo" name="proAtivo">
       </mat-form-field>
-      <mat-form-field>
-        <input matInput placeholder="Data de Cadastro" [(ngModel)]="produto.data_cadastro" name="proData_cadastro">
+
+      <mat-form-field appearance="fill">
+        <mat-label>Ativo?</mat-label>
+        <input matInput [(ngModel)]="produto.ativo" name="proAtivo">
       </mat-form-field>
-      <mat-form-field>
-        <input matInput placeholder="Observações" [(ngModel)]="produto.observacoes" name="proObservacoes">
+
+      <mat-form-field appearance="fill">
+        <mat-label>Data de cadastro</mat-label>
+        <input matInput [(ngModel)]="produto.data_cadastro" name="proData_cadastro">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width-field">
+        <mat-label>Observações</mat-label>
+        <textarea matInput rows="3" [(ngModel)]="produto.observacoes" name="proObservacoes"></textarea>
       </mat-form-field>
     </form>
-  
-    <button mat-raised-button (click)="createProduto()" color="primary">
-      Salvar
-    </button>
-  
-    <button mat-raised-button (click)="cancel()">
-      Cancelar
-    </button>
-  </mat-card>
-  
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-button (click)="cancel()">Cancelar</button>
+    <button mat-raised-button color="primary" (click)="createProduto()">Salvar</button>
+  </mat-card-actions>
+</mat-card>
+

@@ -1,37 +1,38 @@
-<mat-card>
-    <mat-card-title>Nova Forma de Pagamento</mat-card-title>
-    <form>
-        <mat-form-field>
-            <input matInput placeholder="Descrição" [(ngModel)]= "formaPagamento.descricao" name="descricao">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Tipo de pagamento" [(ngModel)]= "formaPagamento.tipo" name="tipo">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Numero de parcelas" [(ngModel)]= "formaPagamento.numeroParcelas" name="numeroParcelas">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Dias entre as parcelas" [(ngModel)]= "formaPagamento.diasEntreParcelas" name="diasEntreParcelas">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Permitir troco ?" [(ngModel)]= "formaPagamento.permiteTroco" name="permiteTroco">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Taxa percentual" [(ngModel)]= "formaPagamento.taxa_percentual" name="taxa_percentual">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Ativo ?" [(ngModel)]= "formaPagamento.ativo" name="ativo">
-        </mat-form-field>
+<mat-card class="form-card mat-elevation-z4">
+  <mat-card-title>Nova Forma de Pagamento</mat-card-title>
+  <form class="form-grid">
+    <mat-form-field appearance="fill">
+      <mat-label>Descrição</mat-label>
+      <input matInput [(ngModel)]= "formaPagamento.descricao" name="descricao">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Tipo de pagamento</mat-label>
+      <input matInput [(ngModel)]= "formaPagamento.tipo" name="tipo">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Número de parcelas</mat-label>
+      <input matInput [(ngModel)]= "formaPagamento.numeroParcelas" name="numeroParcelas">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Dias entre as parcelas</mat-label>
+      <input matInput [(ngModel)]= "formaPagamento.diasEntreParcelas" name="diasEntreParcelas">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Permitir troco?</mat-label>
+      <input matInput [(ngModel)]= "formaPagamento.permiteTroco" name="permiteTroco">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Taxa percentual</mat-label>
+      <input matInput [(ngModel)]= "formaPagamento.taxa_percentual" name="taxa_percentual">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Ativo?</mat-label>
+      <input matInput [(ngModel)]= "formaPagamento.ativo" name="ativo">
+    </mat-form-field>
+  </form>
 
-    </form>
-
-    <button mat-raised-button (click)="createFormaPagamento()">
-        Salvar
-    </button>
-   
-    <button mat-raised-button (click)="cancel()">
-        Cancelar
-    </button>
+  <button mat-raised-button (click)="createFormaPagamento()" color="primary">Salvar</button>
+  <button mat-raised-button (click)="cancel()">Cancelar</button>
 
 </mat-card>
 

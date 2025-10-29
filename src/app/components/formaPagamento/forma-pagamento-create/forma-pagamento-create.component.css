@@ -1,8 +1,15 @@
-form{
-    display: flex;
-    flex-direction: column;
+.form-card{
+  max-width: 720px;
+  margin: 0 auto;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
 }
 
-button{
-    margin: 20px 15px 0px 0px;
+.form-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
 }
+
+button{ margin: 16px 10px 0 0; }

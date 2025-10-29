@@ -1,23 +1,30 @@
-<mat-card>
-    <mat-card-title>Novo Fornecedor</mat-card-title>
-    <form>
-        <mat-form-field>
-            <input matInput placeholder="Nome fantasia" [(ngModel)]="fornecedor.NomeFantasia" name="NomeFantasia">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="CNPJ" [(ngModel)]="fornecedor.Cnpj" name="Cnpj">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Razão social" [(ngModel)]="fornecedor.RazaoSocial" name="RazaoSocial">
-        </mat-form-field>
-    </form>
+<mat-card class="form-card mat-elevation-z4">
+  <mat-card-header>
+    <mat-card-title>Novo fornecedor</mat-card-title>
+    <mat-card-subtitle>Cadastre fornecedores e mantenha contatos atualizados.</mat-card-subtitle>
+  </mat-card-header>
 
-    <button mat-raised-button (click)="createFornecedor()" color="primary">
-        Salvar
-    </button>
-   
-    <button mat-raised-button (click)="cancel()">
-        Cancelar
-    </button>
+  <mat-card-content>
+    <form class="form-grid" autocomplete="off">
+      <mat-form-field appearance="fill">
+        <mat-label>Nome fantasia</mat-label>
+        <input matInput [(ngModel)]="fornecedor.NomeFantasia" name="NomeFantasia">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>CNPJ</mat-label>
+        <input matInput [(ngModel)]="fornecedor.Cnpj" name="Cnpj">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Razão social</mat-label>
+        <input matInput [(ngModel)]="fornecedor.RazaoSocial" name="RazaoSocial">
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-button (click)="cancel()">Cancelar</button>
+    <button mat-raised-button color="primary" (click)="createFornecedor()">Salvar</button>
+  </mat-card-actions>
 
 </mat-card>
+

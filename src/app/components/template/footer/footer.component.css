@@ -1,17 +1,51 @@
-.footer{
-    background-color: 
-    #08001a;
-    /*posição fixa*/
-    position: fixed;
-    /*coloca toolbar na parte de baixa */
-    bottom: 0;
-    display: flex;
-    /*coloca no final da linha. sendo no lado direiro parte inferior*/
-    justify-content: flex-end;
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding: 0 28px;
+  background: linear-gradient(135deg, #101633 0%, #1b2146 100%);
+  color: rgba(255, 255, 255, 0.9);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
 }
 
-.footer > span{
-    color: #ffffff;
-    font-size: 1.1rem;
-    font-weight: 200;
+.footer-left,
+.footer-right {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
 }
+
+.footer-left {
+  font-weight: 500;
+}
+
+.footer-left .made-by {
+  font-weight: 400;
+  opacity: 0.75;
+}
+
+.footer-right a {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.footer-right .version {
+  font-size: 0.85rem;
+  letter-spacing: 0.4px;
+  opacity: 0.7;
+}
+
+.divider {
+  width: 1px;
+  height: 18px;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+

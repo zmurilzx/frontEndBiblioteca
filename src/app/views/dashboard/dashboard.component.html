@@ -1,34 +1,67 @@
-<div class="dashboard">
-  <h2>Bem-vindo</h2>
-  <div class="cards">
-    <mat-card class="card" routerLink="/cliente">
-      <mat-icon>group</mat-icon>
-      <div>
-        <h3>Clientes</h3>
-        <p>Gerencie seus clientes</p>
+<section class="dashboard page">
+  <header class="page-header">
+    <div class="header-info">
+      <span class="filled-badge">Atualizado agora</span>
+      <h1 class="page-title">Visão geral</h1>
+      <p class="page-subtitle">
+        Acompanhe clientes, fornecedores, livros e pagamentos em tempo real.
+      </p>
+    </div>
+
+    <div class="header-actions">
+      <button mat-stroked-button color="primary">
+        <mat-icon>refresh</mat-icon>
+        Atualizar
+      </button>
+      <button mat-raised-button color="primary" routerLink="/cliente/create">
+        <mat-icon>add</mat-icon>
+        Novo cadastro
+      </button>
+    </div>
+  </header>
+
+  <div class="stats-grid">
+    <mat-card class="stat-card" *ngFor="let stat of stats">
+      <div class="stat-icon">
+        <mat-icon>{{ stat.icon }}</mat-icon>
       </div>
-    </mat-card>
-    <mat-card class="card" routerLink="/fornecedor">
-      <mat-icon>local_shipping</mat-icon>
-      <div>
-        <h3>Fornecedores</h3>
-        <p>Gerencie fornecedores</p>
-      </div>
-    </mat-card>
-    <mat-card class="card" routerLink="/livro">
-      <mat-icon>menu_book</mat-icon>
-      <div>
-        <h3>Livros</h3>
-        <p>Catálogo de livros</p>
-      </div>
-    </mat-card>
-    <mat-card class="card" routerLink="/fpagamentos">
-      <mat-icon>payments</mat-icon>
-      <div>
-        <h3>Pagamentos</h3>
-        <p>Formas de pagamento</p>
+      <div class="stat-body">
+        <span class="stat-label">{{ stat.label }}</span>
+        <span class="stat-value">{{ stat.value }}</span>
+        <div class="stat-trend" [class.positive]="stat.positive" [class.negative]="!stat.positive">
+          <mat-icon>{{ stat.positive ? 'arrow_upward' : 'arrow_downward' }}</mat-icon>
+          <span>{{ stat.trend }}</span>
+          <small>{{ stat.trendLabel }}</small>
+        </div>
       </div>
     </mat-card>
   </div>
-</div>
+
+  <mat-card class="quick-actions">
+    <mat-card-header>
+      <mat-card-title>Ações rápidas</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="quick-links">
+        <button mat-stroked-button color="primary" *ngFor="let link of quickLinks" [routerLink]="link.route">
+          <mat-icon>{{ link.icon }}</mat-icon>
+          {{ link.label }}
+        </button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <div class="modules-grid">
+    <mat-card class="module-card mat-elevation-z4" *ngFor="let module of modules" [routerLink]="module.route">
+      <div class="module-icon" [ngClass]="module.accent">
+        <mat-icon>{{ module.icon }}</mat-icon>
+      </div>
+      <div class="module-text">
+        <h3>{{ module.title }}</h3>
+        <p>{{ module.description }}</p>
+      </div>
+      <mat-icon class="chevron">chevron_right</mat-icon>
+    </mat-card>
+  </div>
+</section>
 

@@ -1,17 +1,261 @@
-/* You can add global styles to this file, and also import other style files */
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-
-/*essa é classe css global, e podemos definir configurações para aplicar em outros arquivos*/
-.red{
-    color: #e35e6b;
+/* --- Global theme & typography --- */
+:root {
+  --bg: #f5f7fb;
+  --content-bg: #ffffff;
+  --surface: #ffffff;
+  --surface-2: #f9fafb;
+  --surface-3: #eef2ff;
+  --text: #0f172a;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --border-strong: #cbd5f5;
+  --primary: #7c3aed;
+  --primary-700: #6d28d9;
+  --primary-100: #ede9fe;
+  --accent: #22d3ee;
+  --success: #10b981;
+  --danger: #ef4444;
+  --radius: 14px;
+  --shadow-sm: 0 10px 18px rgba(15, 23, 42, 0.06);
+  --shadow: 0 20px 38px rgba(15, 23, 42, 0.12);
+  --shadow-lg: 0 32px 60px rgba(15, 23, 42, 0.18);
 }
 
-.v-middle{
-    vertical-align: middle;
+html,
+body {
+  height: 100%;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+  margin: 0;
+  font-family: 'Inter', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.55;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.mat-elevation-z4 {
+  box-shadow: var(--shadow) !important;
+}
+
+/* --- Utilities --- */
+.red {
+  color: #e35e6b;
+}
+
+.v-middle {
+  vertical-align: middle;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 24px;
+}
+
+.page-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.page-title {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+.page-subtitle {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.filled-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(124, 58, 237, 0.12);
+  color: var(--primary-700);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.empty-state {
+  padding: 32px;
+  text-align: center;
+  color: var(--muted);
+}
+
+/* --- Angular Material tweaks --- */
+mat-card {
+  background: var(--surface);
+  border-radius: var(--radius) !important;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+mat-card-header,
+mat-card-title {
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+mat-card-title {
+  font-size: 1.25rem;
+}
+
+mat-card-actions {
+  padding: 16px 24px 24px;
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+mat-toolbar {
+  font-family: inherit;
+  letter-spacing: 0.4px;
+}
+
+mat-sidenav-container {
+  background: transparent;
+}
+
+button[mat-raised-button] {
+  border-radius: 999px;
+  padding: 0 22px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+button[mat-icon-button] {
+  border-radius: 12px;
+  transition: background-color 0.2s ease;
+}
+
+button[mat-icon-button]:hover {
+  background: rgba(15, 23, 42, 0.08);
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+mat-form-field.appearance-fill .mat-mdc-text-field-wrapper {
+  border-radius: 12px;
+}
+
+.mat-mdc-table {
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.mat-mdc-table .mat-mdc-header-row {
+  background: var(--primary-100);
+  font-weight: 600;
+}
+
+.mat-mdc-table .mat-mdc-row:nth-child(even) {
+  background: var(--surface-2);
+}
+
+.mat-mdc-table .mat-mdc-row:hover {
+  background: rgba(124, 58, 237, 0.08);
+}
+
+/* --- Shared cards & tables --- */
+.table-card {
+  padding: 0;
+  overflow: hidden;
+}
+
+.table-card .table-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.table-card .table-header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.table-card .table-header p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.table-card .table-content {
+  padding: 0 12px 16px;
+}
+
+.table-card .actions {
+  white-space: nowrap;
+}
+
+.table-card .actions button + button {
+  margin-left: 4px;
+}
+
+/* --- Form layouts --- */
+.form-card {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.form-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.form-grid .full-width-field {
+  grid-column: 1 / -1;
+}
+
+/* --- Responsive helpers --- */
+@media (max-width: 960px) {
+  .page {
+    padding: 18px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}

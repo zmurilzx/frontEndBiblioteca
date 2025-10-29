@@ -1,21 +1,2 @@
-.botao-novo-cliente {
-    background-color: #FFD700;
-    color: #F5F5DC;
-    font-weight: bold;
-    border-radius: 8px;
-    padding: 10px 20px;
-    transition: all 0.3s ease;
-  }
-  
-  .botao-novo-cliente:hover {
-    background-color: #B71C1C;
-    color: #4E342E;
-    transform: scale(1.05);
-  }
-  
-  .botao-novo-cliente i.material-icons {
-    vertical-align: middle;
-    margin-right: 6px;
-    font-size: 20px;
-  }
-  
+.botao-novo-cliente { margin-bottom: 12px; }
+.botao-novo-cliente i.material-icons { vertical-align: middle; margin-right: 6px; font-size: 20px; }

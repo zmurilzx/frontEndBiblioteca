@@ -1,31 +1,55 @@
 <mat-sidenav-container class="container">
   <mat-sidenav class="sidenav" mode="side" opened fixedInViewport="true" fixedTopGap="64">
+    <div class="nav-header">
+      <div class="nav-user">
+        <span class="avatar">MS</span>
+        <div class="user-text">
+          <span class="name">Murilo Souza</span>
+          <span class="role">Administrador</span>
+        </div>
+      </div>
+      <button mat-stroked-button color="primary" routerLink="/dashboard">
+        <mat-icon>insights</mat-icon>
+        Visão geral
+      </button>
+    </div>
+
     <mat-nav-list class="nav-list">
-      <a mat-list-item routerLink="/dashboard">
+      <span mat-subheader>Navegação</span>
+      <a mat-list-item routerLink="/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
         <mat-icon>dashboard</mat-icon>
         Início
       </a>
-      <a mat-list-item routerLink="/fpagamentos">
+      <a mat-list-item routerLink="/fpagamentos" routerLinkActive="active">
         <mat-icon>payments</mat-icon>
-        Forma de Pagamento
+        Formas de pagamento
       </a>
-      <a mat-list-item routerLink="/fornecedor">
+      <a mat-list-item routerLink="/fornecedor" routerLinkActive="active">
         <mat-icon>local_shipping</mat-icon>
         Fornecedores
       </a>
-      <a mat-list-item routerLink="/cliente">
+      <a mat-list-item routerLink="/cliente" routerLinkActive="active">
         <mat-icon>group</mat-icon>
         Clientes
       </a>
-      <a mat-list-item routerLink="/livro">
+      <a mat-list-item routerLink="/livro" routerLinkActive="active">
         <mat-icon>menu_book</mat-icon>
         Livros
       </a>
     </mat-nav-list>
+
+    <div class="nav-footer">
+      <p>Suporte 24/7</p>
+      <span class="chip">
+        <mat-icon>headset_mic</mat-icon>
+        help@biblioteca.dev
+      </span>
+    </div>
   </mat-sidenav>
+
   <mat-sidenav-content class="content">
     <router-outlet></router-outlet>
   </mat-sidenav-content>
-  
+
 </mat-sidenav-container>
 

@@ -1,20 +1,26 @@
-<mat-card class="cliente-card">
-    <mat-card-title>Novo Cliente</mat-card-title>
-    <form class="centered-form">
-        <mat-form-field class="full-width-field">
-            <input matInput placeholder="Nome do Cliente" [(ngModel)]="cliente.CliNome" name="CliNome">
-        </mat-form-field>
-        <mat-form-field class="full-width-field">
-            <input matInput placeholder="CPF" [(ngModel)]="cliente.CliCpf" name="CliCpf">
-        </mat-form-field>
-    </form>
+<mat-card class="form-card mat-elevation-z4">
+  <mat-card-header>
+    <mat-card-title>Novo cliente</mat-card-title>
+    <mat-card-subtitle>Cadastre informações básicas do cliente.</mat-card-subtitle>
+  </mat-card-header>
 
-    <div class="button-container">
-        <button mat-raised-button (click)="createCliente()" class="salvar-btn">
-            Salvar
-        </button>
-        <button mat-raised-button (click)="cancel()">
-            Cancelar
-        </button>
-    </div>
+  <mat-card-content>
+    <form class="form-grid" autocomplete="off">
+      <mat-form-field appearance="fill" class="full-width-field">
+        <mat-label>Nome completo</mat-label>
+        <input matInput [(ngModel)]="cliente.CliNome" name="CliNome">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width-field">
+        <mat-label>CPF</mat-label>
+        <input matInput [(ngModel)]="cliente.CliCpf" name="CliCpf">
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-button (click)="cancel()">Cancelar</button>
+    <button mat-raised-button color="primary" (click)="createCliente()">Salvar</button>
+  </mat-card-actions>
 </mat-card>
+

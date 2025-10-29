@@ -1,16 +1,25 @@
-table {
-    width: 100%;
-    background-color: rgb(75, 75, 75);
-    
-    /* Adicione esta linha para mover a tabela para baixo */
-    margin-top: 1000px; 
+.table-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 8px 8px 0;
 }
 
-.edit > i{
-    color: rgb(247, 247, 247);
+table { width: 100%; }
+
+/* Dense layout and clean header */
+th.mat-header-cell, td.mat-cell { padding: 12px 16px; }
+th.mat-header-cell {
+  background: var(--primary-100);
+  color: var(--text);
+  font-weight: 600;
 }
 
-.delete > i{
-    color: rgb(255, 0, 98);
-}
+/* Zebra + hover */
+tr.mat-row:nth-child(even) { background: var(--surface-2); }
+tr.mat-row:hover { background: rgba(124,58,237,0.06); }
+
+/* Action buttons */
+td.actions { white-space: nowrap; }
+td.actions button { margin-right: 4px; }
 

@@ -62,6 +62,7 @@ registerLocaleData(localePt)
     FornecedorReadComponent,
     ClienteReadComponent,
     EnderecoCreateComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
