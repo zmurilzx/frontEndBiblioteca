@@ -1,50 +1,25 @@
 <mat-sidenav-container class="container">
   <mat-sidenav class="sidenav" mode="side" opened fixedInViewport="true" fixedTopGap="64">
     <div class="nav-header">
-      <div class="nav-user">
-        <span class="avatar">MS</span>
-        <div class="user-text">
-          <span class="name">Murilo Souza</span>
-          <span class="role">Administrador</span>
+      <div class="nav-brand">
+        <mat-icon class="brand-icon">menu_book</mat-icon>
+        <div class="brand-text">
+          <span class="brand-name">Painel principal</span>
+          <span class="brand-subtitle">Dados em tempo real</span>
         </div>
       </div>
-      <button mat-stroked-button color="primary" routerLink="/dashboard">
-        <mat-icon>insights</mat-icon>
-        Visão geral
-      </button>
+      <span class="nav-caption">Seu painel central</span>
     </div>
 
     <mat-nav-list class="nav-list">
-      <span mat-subheader>Navegação</span>
+      <span mat-subheader>Navega&ccedil;&atilde;o</span>
       <a mat-list-item routerLink="/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
         <mat-icon>dashboard</mat-icon>
-        Início
-      </a>
-      <a mat-list-item routerLink="/fpagamentos" routerLinkActive="active">
-        <mat-icon>payments</mat-icon>
-        Formas de pagamento
-      </a>
-      <a mat-list-item routerLink="/fornecedor" routerLinkActive="active">
-        <mat-icon>local_shipping</mat-icon>
-        Fornecedores
-      </a>
-      <a mat-list-item routerLink="/cliente" routerLinkActive="active">
-        <mat-icon>group</mat-icon>
-        Clientes
-      </a>
-      <a mat-list-item routerLink="/livro" routerLinkActive="active">
-        <mat-icon>menu_book</mat-icon>
-        Livros
+        In&iacute;cio
       </a>
     </mat-nav-list>
 
-    <div class="nav-footer">
-      <p>Suporte 24/7</p>
-      <span class="chip">
-        <mat-icon>headset_mic</mat-icon>
-        help@biblioteca.dev
-      </span>
-    </div>
+    
   </mat-sidenav>
 
   <mat-sidenav-content class="content">
@@ -52,4 +27,3 @@
   </mat-sidenav-content>
 
 </mat-sidenav-container>
-
