@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormaPagamento } from '../formaPagamento.model';
+import { FormaPagamento } from '../forma-pagamento.model';
 import { FormaPagamentoService } from '../forma-pagamento.service';
 
 @Component({  // <<< ESSENCIAL
@@ -19,7 +19,9 @@ export class FormaPagamentoCreateComponent {
     permiteTroco:  '',
     taxa_percentual: 0,
     ativo: ''
-  }
+  };
+
+  isSaving = false;
 
   constructor(
     private formaPagamentoService: FormaPagamentoService,
@@ -27,9 +29,17 @@ export class FormaPagamentoCreateComponent {
   ) {}
 
   createFormaPagamento(): void {
-    this.formaPagamentoService.create(this.formaPagamento).subscribe(() => {
-      this.formaPagamentoService.showMessage('Forma de pagamento criada!');
-      this.router.navigate(['/fpagamentos']);
+    if (this.isSaving) { return; }
+    this.isSaving = true;
+    this.formaPagamentoService.create(this.formaPagamento).subscribe({
+      next: () => {
+        this.formaPagamentoService.showMessage('Forma de pagamento criada!');
+        this.router.navigate(['/fpagamentos']);
+      },
+      error: () => {
+        this.formaPagamentoService.showMessage('Não foi possível criar a forma de pagamento.');
+        this.isSaving = false;
+      }
     });
   }
 

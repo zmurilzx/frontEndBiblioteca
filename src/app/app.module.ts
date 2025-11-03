@@ -22,6 +22,8 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatIconModule } from '@angular/material/icon';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatDividerModule } from '@angular/material/divider';
 
 import localePt from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
@@ -30,7 +32,7 @@ import { FooterComponent } from './components/template/footer/footer.component';
 import { NavComponent } from './components/template/nav/nav.component';
 import { FormaPagamentoCrudComponent } from './views/forma-pagamento-crud/forma-pagamento-crud.component';
 import { FornecedorCrudComponent } from './views/fornecedor-crud/fornecedor-crud.component';
-import { FormaPagamentoCreateComponent } from './components/formaPagamento/forma-pagamento-create/forma-pagamento-create.component';
+import { FormaPagamentoCreateComponent } from './components/forma-pagamento/forma-pagamento-create/forma-pagamento-create.component';
 import { FornecedorCreateComponent } from './components/fornecedor/fornecedor-create/fornecedor-create.component';
 import { ClienteCrudComponent } from './views/cliente-crud/cliente-crud.component';
 import { ClienteCreateComponent } from './components/cliente/cliente-create/cliente-create.component';
@@ -41,6 +43,7 @@ import { FornecedorReadComponent } from './components/fornecedor/fornecedor-read
 import { ClienteReadComponent } from './components/cliente/cliente-read/cliente-read.component';
 import { EnderecoCreateComponent } from './components/endereco/endereco-create/endereco-create.component';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
+import { LineChartComponent } from './components/visuals/line-chart/line-chart.component';
 
 registerLocaleData(localePt)
 
@@ -63,6 +66,7 @@ registerLocaleData(localePt)
     ClienteReadComponent,
     EnderecoCreateComponent,
     DashboardComponent,
+    LineChartComponent
   ],
   imports: [
     BrowserModule,
@@ -83,7 +87,9 @@ registerLocaleData(localePt)
     MatPaginatorModule,
     MatSortModule,
     MatSelectModule,
-    MatIconModule
+    MatIconModule,
+    MatCheckboxModule,
+    MatDividerModule
   ],
   providers: [{
     provide: LOCALE_ID,

@@ -1,12 +1,13 @@
 .form-card {
-  max-width: 520px;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-mat-card-subtitle {
-  color: var(--muted);
+mat-card-content {
+  padding-top: 8px;
 }
 
-button {
-  min-width: 120px;
+mat-card-actions {
+  padding: 18px 24px 24px;
+  gap: 12px;
 }
-

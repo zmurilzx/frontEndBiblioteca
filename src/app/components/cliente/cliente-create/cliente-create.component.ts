@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ClienteService } from '../cliente.service';
+import { Cliente } from '../cliente.model';
 
 @Component({
   selector: 'app-cliente-create',
@@ -7,23 +10,38 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClienteCreateComponent implements OnInit {
 
-  cliente = {
+  cliente: Cliente = {
+    cliId: 0,
     CliNome: '',
     CliCpf: ''
   };
 
-  constructor() { }
+  isSaving = false;
+
+  constructor(
+    private clienteService: ClienteService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
   }
 
   createCliente(): void {
-
-    console.log(this.cliente);
+    if (this.isSaving) { return; }
+    this.isSaving = true;
+    this.clienteService.create(this.cliente).subscribe({
+      next: () => {
+        this.clienteService.showMessage('Cliente cadastrado com sucesso!');
+        this.router.navigate(['/cliente']);
+      },
+      error: () => {
+        this.clienteService.showMessage('Não foi possível cadastrar o cliente.');
+        this.isSaving = false;
+      }
+    });
   }
 
   cancel(): void {
- 
-    console.log('Cancelado');
+    this.router.navigate(['/cliente']);
   }
 }

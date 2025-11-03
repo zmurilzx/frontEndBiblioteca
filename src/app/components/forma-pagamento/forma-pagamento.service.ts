@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
-import { FormaPagamento } from './formaPagamento.model';
+import { FormaPagamento } from './forma-pagamento.model';
 import { environment } from '../../../environments/environment';
 
 @Injectable({

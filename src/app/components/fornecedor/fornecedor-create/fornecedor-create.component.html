@@ -14,17 +14,18 @@
         <mat-label>CNPJ</mat-label>
         <input matInput [(ngModel)]="fornecedor.Cnpj" name="Cnpj">
       </mat-form-field>
-      <mat-form-field appearance="fill">
+      <mat-form-field appearance="fill" class="full-width-field">
         <mat-label>Razão social</mat-label>
         <input matInput [(ngModel)]="fornecedor.RazaoSocial" name="RazaoSocial">
       </mat-form-field>
     </form>
   </mat-card-content>
 
-  <mat-card-actions>
-    <button mat-button (click)="cancel()">Cancelar</button>
-    <button mat-raised-button color="primary" (click)="createFornecedor()">Salvar</button>
+  <mat-card-actions align="end">
+    <button mat-stroked-button color="primary" type="button" (click)="cancel()">Cancelar</button>
+    <button mat-flat-button color="primary" type="button" (click)="createFornecedor()" [disabled]="isSaving">
+      {{ isSaving ? 'Salvando...' : 'Salvar' }}
+    </button>
   </mat-card-actions>
 
 </mat-card>
-

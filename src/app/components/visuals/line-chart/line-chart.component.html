@@ -1,0 +1,59 @@
+<svg
+  [attr.width]="width"
+  [attr.height]="height"
+  [attr.viewBox]="'0 0 ' + width + ' ' + height"
+  class="line-chart"
+>
+  <defs>
+    <linearGradient [attr.id]="gradientId" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="var(--primary)" stop-opacity="0.45" />
+      <stop offset="100%" stop-color="var(--primary)" stop-opacity="0.04" />
+    </linearGradient>
+    <filter [attr.id]="glowId" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur"></feMergeNode>
+        <feMergeNode in="SourceGraphic"></feMergeNode>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <g class="grid-lines" *ngIf="gridY.length">
+    <line
+      *ngFor="let y of gridY"
+      [attr.x1]="16"
+      [attr.y1]="y"
+      [attr.x2]="width - 16"
+      [attr.y2]="y"
+    />
+  </g>
+
+  <g class="grid-lines vertical" *ngIf="gridX.length">
+    <line
+      *ngFor="let x of gridX"
+      [attr.x1]="x"
+      [attr.y1]="12"
+      [attr.x2]="x"
+      [attr.y2]="height - 12"
+    />
+  </g>
+
+  <polygon *ngIf="areaPoints" [attr.points]="areaPoints" [attr.fill]="'url(#' + gradientId + ')'" class="area" />
+  <polyline
+    *ngIf="points"
+    [attr.points]="points"
+    [attr.stroke]="stroke"
+    class="line"
+    [attr.filter]="'url(#' + glowId + ')'"
+  />
+
+  <g class="markers" *ngIf="showMarkers">
+    <circle
+      *ngFor="let pt of pointList; let idx = index"
+      [attr.cx]="pt[0]"
+      [attr.cy]="pt[1]"
+      [attr.r]="idx === pointList.length - 1 ? 5 : 3.5"
+      [attr.class]="idx === pointList.length - 1 ? 'marker active' : 'marker'"
+    />
+  </g>
+</svg>

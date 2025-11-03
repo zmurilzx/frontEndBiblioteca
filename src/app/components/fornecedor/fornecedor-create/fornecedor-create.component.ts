@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Fornecedor } from '../fornecedor.model';
+import { FornecedorService } from '../fornecedor.service';
 
 @Component({
   selector: 'app-fornecedor-create',
@@ -7,24 +10,38 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FornecedorCreateComponent implements OnInit {
 
-  fornecedor = {
+  fornecedor: Fornecedor = {
+    fId: 0,
     NomeFantasia: '',
     Cnpj: '',
     RazaoSocial: ''
   };
 
-  constructor() { }
+  isSaving = false;
 
-  ngOnInit(): void {
-  }
+  constructor(
+    private fornecedorService: FornecedorService,
+    private router: Router
+  ) { }
+
+  ngOnInit(): void {}
 
   createFornecedor(): void {
-    // Lógica para criar o fornecedor
-    console.log(this.fornecedor);
+    if (this.isSaving) { return; }
+    this.isSaving = true;
+    this.fornecedorService.create(this.fornecedor).subscribe({
+      next: () => {
+        this.fornecedorService.showMessage('Fornecedor cadastrado com sucesso!');
+        this.router.navigate(['/fornecedor']);
+      },
+      error: () => {
+        this.fornecedorService.showMessage('Não foi possível cadastrar o fornecedor.');
+        this.isSaving = false;
+      }
+    });
   }
 
   cancel(): void {
-    // Lógica para cancelar
-    console.log('Cancelado');
+    this.router.navigate(['/fornecedor']);
   }
 }

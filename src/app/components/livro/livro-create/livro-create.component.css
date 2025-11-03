@@ -1,13 +1,38 @@
 .form-card {
-  max-width: 760px;
+  max-width: 840px;
+  margin: 0 auto;
+}
+
+.livro-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-section h3 {
+  margin: 0;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+.form-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
 textarea {
   resize: vertical;
 }
 
-.salvar-btn,
-.cancelar-btn {
-  min-width: 130px;
+mat-card-actions {
+  padding: 18px 24px 24px;
+  gap: 12px;
 }
-

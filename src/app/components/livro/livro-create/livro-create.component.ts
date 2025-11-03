@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Livro } from '../livro.model';
 import { LivroService } from '../livro.service';
@@ -10,7 +10,7 @@ import { FornecedorService } from '../../fornecedor/fornecedor.service';
   templateUrl: './livro-create.component.html',
   styleUrls: ['./livro-create.component.css']
 })
-export class LivroCreateComponent {
+export class LivroCreateComponent implements OnInit {
 
   livro: Livro = {
     liId: 0,
@@ -23,28 +23,35 @@ export class LivroCreateComponent {
     liDimensoes: '',
     liAutor: '',
     fornecedor_id: undefined,
-
   };
 
-fornecedor: Fornecedor[] = [];
+  fornecedor: Fornecedor[] = [];
+  isSaving = false;
 
   constructor(
     private livroService: LivroService,
-  private fornecedorService: FornecedorService,
+    private fornecedorService: FornecedorService,
     private router: Router
   ) {}
 
   ngOnInit(): void {
     this.fornecedorService.read().subscribe(fornecedor => {
-      this.fornecedor = fornecedor
-    }
-    )
+      this.fornecedor = fornecedor;
+    });
   }
 
   createLivro(): void {
-    this.livroService.create(this.livro).subscribe(() => {
-      this.livroService.showMessage('📚 Livro cadastrado com sucesso!');
-      this.router.navigate(['/livro']);
+    if (this.isSaving) { return; }
+    this.isSaving = true;
+    this.livroService.create(this.livro).subscribe({
+      next: () => {
+        this.livroService.showMessage('Livro cadastrado com sucesso!');
+        this.router.navigate(['/livro']);
+      },
+      error: () => {
+        this.livroService.showMessage('Não foi possível cadastrar o livro.');
+        this.isSaving = false;
+      }
     });
   }
 
@@ -52,4 +59,3 @@ fornecedor: Fornecedor[] = [];
     this.router.navigate(['/livro']);
   }
 }
-

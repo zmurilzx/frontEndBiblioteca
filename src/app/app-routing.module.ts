@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FormaPagamentoCrudComponent } from './views/forma-pagamento-crud/forma-pagamento-crud.component';
 import { FornecedorCrudComponent } from './views/fornecedor-crud/fornecedor-crud.component';
-import { FormaPagamentoCreateComponent } from './components/formaPagamento/forma-pagamento-create/forma-pagamento-create.component';
+import { FormaPagamentoCreateComponent } from './components/forma-pagamento/forma-pagamento-create/forma-pagamento-create.component';
 import { FornecedorCreateComponent } from './components/fornecedor/fornecedor-create/fornecedor-create.component';
 import { ClienteCreateComponent } from './components/cliente/cliente-create/cliente-create.component';
 import { ClienteCrudComponent } from './views/cliente-crud/cliente-crud.component';
@@ -11,7 +11,7 @@ import { LivroCreateComponent } from './components/livro/livro-create/livro-crea
 import { DashboardComponent } from './views/dashboard/dashboard.component';
 
 
-//configuração para rotear entre as paginas na home
+// configuracao das rotas principais
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },

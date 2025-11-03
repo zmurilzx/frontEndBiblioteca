@@ -1,0 +1,42 @@
+.line-chart {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+  background: radial-gradient(circle at top left, rgba(99, 102, 241, 0.14), transparent 60%);
+  overflow: visible;
+}
+
+.grid-lines line {
+  stroke: rgba(99, 102, 241, 0.12);
+  stroke-dasharray: 4 10;
+}
+
+.grid-lines.vertical line {
+  stroke: rgba(99, 102, 241, 0.08);
+  stroke-dasharray: 2 14;
+}
+
+.line {
+  fill: none;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.area {
+  stroke: none;
+}
+
+.markers .marker {
+  fill: #fff;
+  stroke: var(--primary);
+  stroke-width: 2;
+  filter: drop-shadow(0 6px 8px rgba(99, 102, 241, 0.24));
+}
+
+.markers .marker.active {
+  fill: var(--primary);
+  stroke: #fff;
+  filter: drop-shadow(0 10px 18px rgba(99, 102, 241, 0.38));
+}

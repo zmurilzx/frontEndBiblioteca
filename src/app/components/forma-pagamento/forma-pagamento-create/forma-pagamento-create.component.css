@@ -1,9 +1,9 @@
 .form-card {
-  max-width: 640px;
+  max-width: 680px;
   margin: 0 auto;
 }
 
-mat-card-content {
+.forma-form {
   padding-top: 8px;
 }
 

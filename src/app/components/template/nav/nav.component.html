@@ -1,21 +1,26 @@
 <mat-sidenav-container class="container">
   <mat-sidenav class="sidenav" mode="side" opened fixedInViewport="true" fixedTopGap="64">
-    <div class="nav-header">
-      <div class="nav-brand">
-        <mat-icon class="brand-icon">menu_book</mat-icon>
-        <div class="brand-text">
-          <span class="brand-name">Painel principal</span>
-          <span class="brand-subtitle">Dados em tempo real</span>
-        </div>
-      </div>
-      <span class="nav-caption">Seu painel central</span>
-    </div>
-
     <mat-nav-list class="nav-list">
       <span mat-subheader>Navega&ccedil;&atilde;o</span>
       <a mat-list-item routerLink="/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
-        <mat-icon>dashboard</mat-icon>
-        In&iacute;cio
+        <mat-icon>insights</mat-icon>
+        Vis&atilde;o geral
+      </a>
+      <a mat-list-item routerLink="/fpagamentos" routerLinkActive="active">
+        <mat-icon>credit_card</mat-icon>
+        Formas de pagamento
+      </a>
+      <a mat-list-item routerLink="/fornecedor" routerLinkActive="active">
+        <mat-icon>storefront</mat-icon>
+        Fornecedores
+      </a>
+      <a mat-list-item routerLink="/cliente" routerLinkActive="active">
+        <mat-icon>diversity_3</mat-icon>
+        Clientes
+      </a>
+      <a mat-list-item routerLink="/livro" routerLinkActive="active">
+        <mat-icon>auto_stories</mat-icon>
+        Livros
       </a>
     </mat-nav-list>
 
