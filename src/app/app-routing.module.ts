@@ -15,6 +15,7 @@ import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { EmprestimoReadComponent } from './components/emprestimo/emprestimo-read/emprestimo-read.component';
 import { EmprestimoCreateComponent } from './components/emprestimo/emprestimo-create/emprestimo-create.component';
 import { FormaPagamentoUpdateComponent } from './components/forma-pagamento/forma-pagamento-update/forma-pagamento-update.component';
+import { EnderecoCreateComponent } from './components/endereco/endereco-create/endereco-create.component';
 
 
 // configuracao das rotas principais
@@ -34,6 +35,7 @@ const routes: Routes = [
   { path: 'livro/update/:id', component: LivroUpdateComponent },
   { path: 'emprestimos', component: EmprestimoReadComponent },
   { path: 'emprestimos/create', component: EmprestimoCreateComponent },
+  { path: 'endereco/create', component: EnderecoCreateComponent },
   { path: 'fornecedor/update/:id', component: FornecedorUpdateComponent },
   { path: '**', redirectTo: 'dashboard' }
 ];
