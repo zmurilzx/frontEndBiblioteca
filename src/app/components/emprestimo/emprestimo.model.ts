@@ -1,5 +1,5 @@
 export interface Emprestimo {
-  id: number;
+  id?: number;
   livroId: number;
   livroTitulo?: string;
   clienteId: number;

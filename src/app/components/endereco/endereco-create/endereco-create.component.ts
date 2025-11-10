@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Endereco } from '../endereco.model';
+import { CepService, CepResponse } from '../../../core/cep.service';
 import { EnderecoService } from '../endereco.service';
 
 @Component({
@@ -23,6 +24,7 @@ export class EnderecoCreateComponent implements OnInit {
 
   constructor(
     private enderecoService: EnderecoService,
+    private cepService: CepService,
     private router: Router
   ) {}
 
@@ -51,5 +53,24 @@ export class EnderecoCreateComponent implements OnInit {
 
   cancel(): void {
     this.router.navigate(['/cliente']);
+  }
+
+  onCepBlur(): void {
+    const cepDigits = (this.endereco.cep || '').replace(/\D/g, '');
+    if (cepDigits.length !== 8) { return; }
+    this.cepService.buscarPorCep(cepDigits).subscribe({
+      next: (res: CepResponse) => {
+        if ((res as any).erro) {
+          this.enderecoService.showMessage('CEP não encontrado.');
+          return;
+        }
+        this.endereco.rua = res.logradouro || this.endereco.rua;
+        this.endereco.cidade = res.localidade || this.endereco.cidade;
+        this.endereco.estado = (res.uf || this.endereco.estado || '').toUpperCase();
+      },
+      error: () => {
+        this.enderecoService.showMessage('Falha ao consultar CEP.');
+      }
+    });
   }
 }

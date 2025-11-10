@@ -23,7 +23,9 @@ export class LivroService {
   }
 
   create(livro: Livro): Observable<Livro> {
-    return this.http.post<Livro>(this.baseUrl, livro);
+    const payload: any = { ...livro };
+    if (payload && (payload.id === 0 || payload.id === undefined)) delete payload.id;
+    return this.http.post<Livro>(this.baseUrl, payload);
   }
 
   read(): Observable<Livro[]> {

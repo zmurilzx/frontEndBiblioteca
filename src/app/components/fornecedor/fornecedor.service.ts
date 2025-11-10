@@ -23,7 +23,9 @@ export class FornecedorService {
   }
 
   create(fornecedor: Fornecedor): Observable<Fornecedor> {
-    return this.http.post<Fornecedor>(this.baseUrl, fornecedor);
+    const payload: any = { ...fornecedor };
+    if (payload && (payload.id === 0 || payload.id === undefined)) delete payload.id;
+    return this.http.post<Fornecedor>(this.baseUrl, payload);
   }
 
   read(): Observable<Fornecedor[]> {

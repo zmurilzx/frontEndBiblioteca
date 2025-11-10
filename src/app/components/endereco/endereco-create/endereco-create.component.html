@@ -4,10 +4,10 @@
     <mat-card-subtitle>Cadastre o endereço do cliente.</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
-    <form #enderecoForm="ngForm" class="form-grid">
+    <form #enderecoForm="ngForm" class="form-grid" autocomplete="off">
       <mat-form-field appearance="fill">
         <mat-label>Cliente</mat-label>
-        <input matInput placeholder="ID do Cliente" [(ngModel)]="endereco.clienteId" name="clienteId" type="number" required>
+        <input matInput placeholder="ID do Cliente" [(ngModel)]="endereco.clienteId" name="clienteId" type="number" inputmode="numeric" required>
       </mat-form-field>
 
       <mat-form-field appearance="fill">
@@ -17,7 +17,7 @@
 
       <mat-form-field appearance="fill">
         <mat-label>Número</mat-label>
-        <input matInput placeholder="Número" [(ngModel)]="endereco.numero" name="numero" type="number">
+        <input matInput placeholder="Número" [(ngModel)]="endereco.numero" name="numero" type="number" inputmode="numeric">
       </mat-form-field>
 
       <mat-form-field appearance="fill">
@@ -27,12 +27,12 @@
 
       <mat-form-field appearance="fill">
         <mat-label>Estado</mat-label>
-        <input matInput placeholder="Estado (UF)" [(ngModel)]="endereco.estado" name="estado" maxlength="2">
+        <input matInput placeholder="Estado (UF)" [(ngModel)]="endereco.estado" (ngModelChange)="endereco.estado = ($event || '').toUpperCase()" name="estado" maxlength="2" mask="SS" pattern="^[A-Za-z]{2}$" style="text-transform: uppercase">
       </mat-form-field>
 
       <mat-form-field appearance="fill">
         <mat-label>CEP</mat-label>
-        <input matInput placeholder="CEP" [(ngModel)]="endereco.cep" name="cep" mask="00000-000">
+        <input matInput placeholder="CEP" [(ngModel)]="endereco.cep" name="cep" mask="00000-000" inputmode="numeric" (blur)="onCepBlur()">
       </mat-form-field>
 
       <mat-checkbox [(ngModel)]="endereco.ativo" name="ativo">Ativo</mat-checkbox>

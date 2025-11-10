@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ClienteService } from '../cliente.service';
 import { Cliente } from '../cliente.model';
+import { CepService, CepResponse } from '../../../core/cep.service';
 
 @Component({
   selector: 'app-cliente-create',
@@ -11,7 +12,6 @@ import { Cliente } from '../cliente.model';
 export class ClienteCreateComponent implements OnInit {
 
   cliente: Cliente = {
-    id: 0,
     nome: '',
     cpf: '',
     email: '',
@@ -23,10 +23,20 @@ export class ClienteCreateComponent implements OnInit {
     observacoes: ''
   };
 
+  // Captura endereço opcional (CEP, rua, número, cidade, UF)
+  enderecoVM: { cep?: string; rua?: string; numero?: number; cidade?: string; estado?: string } = {
+    cep: '',
+    rua: '',
+    numero: undefined,
+    cidade: '',
+    estado: ''
+  };
+
   isSaving = false;
 
   constructor(
     private clienteService: ClienteService,
+    private cepService: CepService,
     private router: Router
   ) { }
 
@@ -50,6 +60,25 @@ export class ClienteCreateComponent implements OnInit {
 
   cancel(): void {
     this.router.navigate(['/cliente']);
+  }
+
+  onCepBlur(): void {
+    const cepDigits = (this.enderecoVM.cep || '').replace(/\D/g, '');
+    if (cepDigits.length !== 8) { return; }
+    this.cepService.buscarPorCep(cepDigits).subscribe({
+      next: (res: CepResponse) => {
+        if ((res as any).erro) {
+          this.clienteService.showMessage('CEP não encontrado.');
+          return;
+        }
+        this.enderecoVM.rua = res.logradouro || this.enderecoVM.rua;
+        this.enderecoVM.cidade = res.localidade || this.enderecoVM.cidade;
+        this.enderecoVM.estado = (res.uf || this.enderecoVM.estado || '').toUpperCase();
+      },
+      error: () => {
+        this.clienteService.showMessage('Falha ao consultar CEP.');
+      }
+    });
   }
 }
 

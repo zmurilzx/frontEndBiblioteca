@@ -24,7 +24,9 @@ export class ClienteService {
   }
 
   create(cliente: Cliente): Observable<Cliente> {
-    return this.http.post<Cliente>(this.baseUrl, cliente);
+    const payload: any = { ...cliente };
+    if (payload && (payload.id === 0 || payload.id === undefined)) delete payload.id;
+    return this.http.post<Cliente>(this.baseUrl, payload);
   }
 
   read(): Observable<Cliente[]> {

@@ -23,7 +23,9 @@ export class FormaPagamentoService {
   }
 
   create(formaPagamento: FormaPagamento): Observable<FormaPagamento> {
-    return this.http.post<FormaPagamento>(this.baseUrl, formaPagamento);
+    const payload: any = { ...formaPagamento };
+    if (payload && (payload.id === 0 || payload.id === undefined)) delete payload.id;
+    return this.http.post<FormaPagamento>(this.baseUrl, payload);
   }
 
   read(): Observable<FormaPagamento[]> {

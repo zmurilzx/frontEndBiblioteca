@@ -27,19 +27,43 @@
         <input matInput [(ngModel)]="fornecedor.telefone" name="telefone" mask="(00) 00000-0000">
       </mat-form-field>
 
+      <!-- Endereço estruturado -->
+      <mat-form-field appearance="fill">
+        <mat-label>CEP</mat-label>
+        <input matInput [(ngModel)]="enderecoVM.cep" name="enderecoCep" mask="00000-000" inputmode="numeric" (blur)="onCepBlur()">
+        <mat-hint *ngIf="isCepLoading">Buscando endereço…</mat-hint>
+      </mat-form-field>
+
       <mat-form-field appearance="fill" class="full-width-field">
-        <mat-label>Endereço</mat-label>
-        <input matInput [(ngModel)]="fornecedor.endereco" name="endereco" maxlength="200">
+        <mat-label>Rua</mat-label>
+        <input matInput [(ngModel)]="enderecoVM.rua" name="enderecoRua" maxlength="150">
       </mat-form-field>
 
       <mat-form-field appearance="fill">
-        <mat-label>IE</mat-label>
-        <input matInput [(ngModel)]="fornecedor.inscricaoEstadual" name="inscricaoEstadual" maxlength="50">
+        <mat-label>Número</mat-label>
+        <input matInput [(ngModel)]="enderecoVM.numero" name="enderecoNumero" type="number" inputmode="numeric">
       </mat-form-field>
 
       <mat-form-field appearance="fill">
-        <mat-label>IM</mat-label>
-        <input matInput [(ngModel)]="fornecedor.inscricaoMunicipal" name="inscricaoMunicipal" maxlength="50">
+        <mat-label>Cidade</mat-label>
+        <input matInput [(ngModel)]="enderecoVM.cidade" name="enderecoCidade" maxlength="100">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>UF</mat-label>
+        <input matInput [(ngModel)]="enderecoVM.estado" (ngModelChange)="enderecoVM.estado = ($event || '').toUpperCase()" name="enderecoUf" maxlength="2" mask="SS" pattern="^[A-Za-z]{2}$" style="text-transform: uppercase">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>IE (PR)</mat-label>
+        <input matInput [(ngModel)]="fornecedor.inscricaoEstadual" name="inscricaoEstadual" mask="00000000-00" inputmode="numeric">
+        <mat-hint align="end">Paraná: 10 dígitos (formato 00000000-00)</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>IM (PR)</mat-label>
+        <input matInput [(ngModel)]="fornecedor.inscricaoMunicipal" name="inscricaoMunicipal" mask="00000000-00" inputmode="numeric">
+        <mat-hint align="end">Paraná: padrão numérico (varia por município)</mat-hint>
       </mat-form-field>
 
       <mat-form-field appearance="fill">
