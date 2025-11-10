@@ -1,0 +1,28 @@
+.table-header { display:flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 12px; }
+/* força alinhamento à esquerda mesmo se houver regras globais conflitantes */
+.table-card .table-header { align-items: flex-start !important; justify-content: flex-start !important; flex-direction: column !important; }
+
+.table-tools { display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+
+/* restringe largura do campo de busca para manter o botão na mesma linha */
+.table-tools mat-form-field { min-width: 240px; flex: 0 0 320px; max-width: 360px; }
+.table-tools a { white-space: nowrap; }
+
+.status-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  background: rgba(148, 163, 184, 0.16);
+  color: #475569;
+}
+
+.status-chip.active { background: rgba(16, 185, 129, 0.16); color: #065f46; }
+.status-chip.inactive { background: rgba(239, 68, 68, 0.16); color: #991b1b; }
+
+/* empty state */
+.empty-state { padding: 36px 24px; text-align: center; color: var(--muted); }
+.empty-state mat-icon { font-size: 42px; width: 42px; height: 42px; color: var(--primary-700); opacity: .85; }
+.empty-state h3 { margin: 8px 0 4px; font-weight: 600; }
+.empty-state p { margin: 0 0 16px; }
