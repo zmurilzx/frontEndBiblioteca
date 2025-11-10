@@ -1,13 +1,16 @@
-.form-card {
-  max-width: 600px;
-  margin: 0 auto;
+
+
+.form-grid {
+  display: grid;
+  gap: 16px;
 }
 
-mat-card-content {
-  padding-top: 8px;
+.form-grid .full-width-field {
+  grid-column: 1 / -1;
 }
 
 mat-card-actions {
   padding: 18px 24px 24px;
   gap: 12px;
 }
+

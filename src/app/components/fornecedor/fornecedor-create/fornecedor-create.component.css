@@ -1,16 +1,16 @@
-.form-card {
+.fornecedor-card {
   max-width: 640px;
   margin: 0 auto;
-}
-
-mat-card-content {
-  padding-top: 8px;
 }
 
 .form-grid {
   display: grid;
   gap: 16px;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.form-grid .full-width-field {
+  grid-column: 1 / -1;
 }
 
 mat-card-actions {

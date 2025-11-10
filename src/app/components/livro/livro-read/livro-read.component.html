@@ -9,13 +9,15 @@
         <mat-label>Pesquisar</mat-label>
         <input matInput (keyup)="applyFilter($any($event.target).value)" placeholder="Título, autor ou ISBN" />
       </mat-form-field>
-      <button mat-fab color="primary" [routerLink]="'/livro/create'" aria-label="Novo livro" class="fab-add">
-        <mat-icon>add</mat-icon>
-      </button>
+      <a mat-raised-button color="primary" routerLink="/livro/create">
+        <mat-icon>menu_book</mat-icon>
+        Novo livro
+      </a>
     </div>
   </div>
 
   <div class="table-content">
+    <ng-container *ngIf="dataSource.data.length; else emptyLivros">
     <table mat-table [dataSource]="dataSource" matSort class="data-table">
       <ng-container matColumnDef="id">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
@@ -80,6 +82,18 @@
       <tr mat-header-row *matHeaderRowDef="displayedColumns" class="header-row" sticky></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
+    </ng-container>
+    <ng-template #emptyLivros>
+      <div class="empty-state">
+        <mat-icon>menu_book</mat-icon>
+        <h3>Nenhum livro</h3>
+        <p>Cadastre seu primeiro livro e gerencie o catálogo.</p>
+        <a mat-raised-button color="primary" routerLink="/livro/create">
+          <mat-icon>add</mat-icon>
+          Novo livro
+        </a>
+      </div>
+    </ng-template>
   </div>
 
   <mat-paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 25]" showFirstLastButtons></mat-paginator>

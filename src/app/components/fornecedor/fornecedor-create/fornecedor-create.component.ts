@@ -11,10 +11,17 @@ import { FornecedorService } from '../fornecedor.service';
 export class FornecedorCreateComponent implements OnInit {
 
   fornecedor: Fornecedor = {
-    fId: 0,
-    NomeFantasia: '',
-    Cnpj: '',
-    RazaoSocial: ''
+    id: 0,
+    nomeFantasia: '',
+    cnpj: '',
+    razaoSocial: '',
+    telefone: '',
+    endereco: '',
+    inscricaoEstadual: '',
+    inscricaoMunicipal: '',
+    contatoResponsavel: '',
+    ativo: true,
+    observacoes: ''
   };
 
   isSaving = false;
@@ -45,3 +52,4 @@ export class FornecedorCreateComponent implements OnInit {
     this.router.navigate(['/fornecedor']);
   }
 }
+

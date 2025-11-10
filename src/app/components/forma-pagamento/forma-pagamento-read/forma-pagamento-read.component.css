@@ -7,6 +7,25 @@
 /* restringe largura do campo de busca para manter o botão na mesma linha */
 .table-tools mat-form-field { min-width: 240px; flex: 0 0 320px; max-width: 360px; }
 .table-tools a { white-space: nowrap; }
+.table-tools a[mat-raised-button] {
+  height: 36px;
+  padding: 0 14px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.table-tools a[mat-raised-button] mat-icon {
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+  line-height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+}
 
 .status-chip {
   display: inline-flex;
@@ -26,3 +45,22 @@
 .empty-state mat-icon { font-size: 42px; width: 42px; height: 42px; color: var(--primary-700); opacity: .85; }
 .empty-state h3 { margin: 8px 0 4px; font-weight: 600; }
 .empty-state p { margin: 0 0 16px; }
+/* Botão do empty state menor e com ícone alinhado */
+.empty-state a[mat-raised-button] {
+  height: 36px;
+  padding: 0 14px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.empty-state a[mat-raised-button] mat-icon {
+  font-size: 16px;
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+}

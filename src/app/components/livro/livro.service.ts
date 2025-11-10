@@ -30,19 +30,20 @@ export class LivroService {
     return this.http.get<Livro[]>(this.baseUrl);
   }
 
-  readById(liId: string): Observable<Livro> {
-    const url = `${this.baseUrl}/${liId}`;
+  readById(id: number): Observable<Livro> {
+    const url = `${this.baseUrl}/${id}`;
     return this.http.get<Livro>(url);
   }
 
   update(livro: Livro): Observable<Livro> {
-    const url = `${this.baseUrl}/${livro.liId}`;
+    const url = `${this.baseUrl}/${livro.id}`;
     return this.http.put<Livro>(url, livro);
   }
 
-  delete(liId: number): Observable<Livro> {
-    const url = `${this.baseUrl}/${liId}`;
+  delete(id: number): Observable<Livro> {
+    const url = `${this.baseUrl}/${id}`;
     return this.http.delete<Livro>(url);
   }
   
 }
+

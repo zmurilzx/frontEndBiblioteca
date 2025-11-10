@@ -11,9 +11,16 @@ import { Cliente } from '../cliente.model';
 export class ClienteCreateComponent implements OnInit {
 
   cliente: Cliente = {
-    cliId: 0,
-    CliNome: '',
-    CliCpf: ''
+    id: 0,
+    nome: '',
+    cpf: '',
+    email: '',
+    telefone: '',
+    rg: '',
+    sexo: 'OUTRO',
+    dataNascimento: '',
+    ativo: true,
+    observacoes: ''
   };
 
   isSaving = false;
@@ -45,3 +52,4 @@ export class ClienteCreateComponent implements OnInit {
     this.router.navigate(['/cliente']);
   }
 }
+

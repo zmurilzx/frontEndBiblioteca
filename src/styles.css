@@ -193,6 +193,15 @@ button[mat-raised-button][color="primary"] {
   box-shadow: 0 18px 34px rgba(14, 165, 233, 0.32);
 }
 
+/* Ícones dentro de botões primários também brancos */
+button[mat-flat-button][color="primary"] mat-icon,
+button[mat-raised-button][color="primary"] mat-icon,
+a[mat-raised-button][color="primary"] mat-icon,
+button[mat-fab][color="primary"] mat-icon,
+a[mat-fab][color="primary"] mat-icon {
+  color: #fff !important;
+}
+
 button[mat-flat-button][color="primary"]:hover,
 button[mat-raised-button][color="primary"]:hover {
   transform: translateY(-2px);
@@ -347,6 +356,31 @@ mat-form-field.appearance-fill .mat-mdc-text-field-wrapper:hover {
 .status-chip.inactive { background: rgba(239,68,68,0.16); color: #991b1b; }
 
 /* --- Shared cards & tables --- */
+.table-tools a[mat-raised-button],
+.empty-state a[mat-raised-button] {
+  height: 36px;
+  padding: 0 14px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.table-tools a[mat-raised-button] mat-icon,
+.empty-state a[mat-raised-button] mat-icon {
+  font-size: 16px;
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+}
+.empty-state { padding: 36px 24px; text-align: center; color: var(--muted); }
+.empty-state mat-icon { font-size: 42px; width: 42px; height: 42px; color: var(--primary-700); opacity: .85; }
+.empty-state h3 { margin: 8px 0 4px; font-weight: 600; }
+.empty-state p { margin: 0 0 16px; }
 .fab-add { box-shadow: var(--shadow-sm); }
 .fab-add:hover { transform: translateY(-1px); box-shadow: var(--shadow); }
 .fab-add mat-icon { font-size: 22px; width: 22px; height: 22px; }
@@ -431,3 +465,13 @@ mat-form-field.appearance-fill .mat-mdc-text-field-wrapper:hover {
 }
 
 
+/* Ícones um pouco menores para alinhar com o texto */
+a[mat-raised-button] mat-icon,
+a[mat-flat-button] mat-icon,
+button[mat-raised-button] mat-icon,
+button[mat-flat-button] mat-icon {
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+  line-height: 18px;
+}

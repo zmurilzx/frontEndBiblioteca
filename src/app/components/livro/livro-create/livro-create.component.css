@@ -1,4 +1,4 @@
-.form-card {
+.livro-card {
   max-width: 840px;
   margin: 0 auto;
 }
@@ -6,26 +6,48 @@
 .livro-form {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 28px;
 }
 
 .form-section {
   display: flex;
   flex-direction: column;
+  gap: 18px;
+}
+
+.section-header {
+  display: flex;
+  align-items: flex-start;
   gap: 16px;
 }
 
-.form-section h3 {
+.section-header mat-icon {
+  font-size: 32px;
+  line-height: 32px;
+  color: var(--primary);
+}
+
+.section-header h3 {
   margin: 0;
+  font-size: 1.05rem;
   font-weight: 600;
-  font-size: 1rem;
+  color: var(--text);
+}
+
+.section-header p {
+  margin: 4px 0 0;
   color: var(--muted);
+  font-size: 0.9rem;
 }
 
 .form-grid {
   display: grid;
   gap: 16px;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.form-grid .full-width-field {
+  grid-column: 1 / -1;
 }
 
 textarea {

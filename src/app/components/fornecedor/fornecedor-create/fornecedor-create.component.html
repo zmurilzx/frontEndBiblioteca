@@ -6,18 +6,53 @@
 
   <mat-card-content>
     <form class="form-grid" autocomplete="off">
-      <mat-form-field appearance="fill">
-        <mat-label>Nome fantasia</mat-label>
-        <input matInput [(ngModel)]="fornecedor.NomeFantasia" name="NomeFantasia">
-      </mat-form-field>
-      <mat-form-field appearance="fill">
-        <mat-label>CNPJ</mat-label>
-        <input matInput [(ngModel)]="fornecedor.Cnpj" name="Cnpj">
-      </mat-form-field>
       <mat-form-field appearance="fill" class="full-width-field">
         <mat-label>Razão social</mat-label>
-        <input matInput [(ngModel)]="fornecedor.RazaoSocial" name="RazaoSocial">
+        <input matInput [(ngModel)]="fornecedor.razaoSocial" name="razaoSocial" required maxlength="150">
       </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Nome fantasia</mat-label>
+        <input matInput [(ngModel)]="fornecedor.nomeFantasia" name="nomeFantasia" maxlength="150">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>CNPJ</mat-label>
+        <input matInput [(ngModel)]="fornecedor.cnpj" name="cnpj" required mask="00.000.000/0000-00">
+        <mat-hint align="end">14 dígitos (somente números)</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Telefone</mat-label>
+        <input matInput [(ngModel)]="fornecedor.telefone" name="telefone" mask="(00) 00000-0000">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width-field">
+        <mat-label>Endereço</mat-label>
+        <input matInput [(ngModel)]="fornecedor.endereco" name="endereco" maxlength="200">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>IE</mat-label>
+        <input matInput [(ngModel)]="fornecedor.inscricaoEstadual" name="inscricaoEstadual" maxlength="50">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>IM</mat-label>
+        <input matInput [(ngModel)]="fornecedor.inscricaoMunicipal" name="inscricaoMunicipal" maxlength="50">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Contato do responsável</mat-label>
+        <input matInput [(ngModel)]="fornecedor.contatoResponsavel" name="contatoResponsavel" maxlength="100">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width-field">
+        <mat-label>Observações</mat-label>
+        <textarea matInput rows="2" [(ngModel)]="fornecedor.observacoes" name="observacoes" maxlength="100"></textarea>
+      </mat-form-field>
+
+      <mat-checkbox [(ngModel)]="fornecedor.ativo" name="ativo" required>Ativo</mat-checkbox>
     </form>
   </mat-card-content>
 
@@ -27,5 +62,5 @@
       {{ isSaving ? 'Salvando...' : 'Salvar' }}
     </button>
   </mat-card-actions>
-
 </mat-card>
+

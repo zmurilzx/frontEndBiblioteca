@@ -1,10 +1,10 @@
 export interface FormaPagamento {
-  FId: number;
+  id: number;
   descricao: string;
   tipo: string;
-  numeroParcelas: number;
+  numeroParcelas?: number;
   diasEntreParcelas: number;
-  permiteTroco: string;
-  taxa_percentual: number;
-  ativo: string;
+  permiteTroco: boolean;
+  taxaPercentual?: number;
+  ativo: boolean;
 }

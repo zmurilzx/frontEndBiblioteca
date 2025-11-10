@@ -1,0 +1,90 @@
+<mat-card class="table-card mat-elevation-z4">
+  <div class="table-header">
+    <div>
+      <h2>Empréstimos</h2>
+      <p>Livros emprestados e responsáveis</p>
+    </div>
+    <div class="table-tools">
+      <a mat-raised-button color="primary" routerLink="/emprestimos/create" aria-label="Novo empréstimo">
+        <mat-icon>add</mat-icon>
+        Novo empréstimo
+      </a>
+      <mat-form-field appearance="fill">
+        <mat-label>Status</mat-label>
+        <mat-select [ngModel]="filtroStatus" (ngModelChange)="changeStatusFilter($event)" name="status">
+          <mat-option [value]="'ATIVO'">Ativo</mat-option>
+          <mat-option [value]="'ATRASADO'">Atrasado</mat-option>
+          <mat-option [value]="'DEVOLVIDO'">Devolvido</mat-option>
+          <mat-option [value]="'CANCELADO'">Cancelado</mat-option>
+          <mat-option [value]="undefined">Todos</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Pesquisar</mat-label>
+        <input matInput (keyup)="applyFilter($any($event.target).value)" placeholder="Livro ou cliente" />
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="table-content">
+    <table mat-table [dataSource]="dataSource" class="data-table" matSort>
+      <ng-container matColumnDef="livro">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Livro</th>
+        <td mat-cell *matCellDef="let row">
+          <div class="cell-stack">
+            <span class="title">{{ row.livroTitulo }}</span>
+            <span class="subtitle">ID: {{ row.livroId }}</span>
+          </div>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="cliente">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Cliente</th>
+        <td mat-cell *matCellDef="let row">
+          <div class="cell-stack">
+            <span class="title">{{ row.clienteNome }}</span>
+            <span class="subtitle">ID: {{ row.clienteId }}</span>
+          </div>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="datas">
+        <th mat-header-cell *matHeaderCellDef>Datas</th>
+        <td mat-cell *matCellDef="let row">
+          <div class="cell-stack">
+            <span class="title">Empréstimo: {{ row.dataEmprestimo || '-' }}</span>
+            <span class="subtitle">Prevista: {{ row.dataDevolucaoPrevista }} | Devolução: {{ row.dataDevolucaoReal || '-' }}</span>
+          </div>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef>Status</th>
+        <td mat-cell *matCellDef="let row">
+          <span class="status-chip"
+                [class.active]="row.status==='ATIVO'"
+                [class.warning]="row.status==='ATRASADO'"
+                [class.done]="row.status==='DEVOLVIDO'"
+                [class.inactive]="row.status==='CANCELADO'">
+            {{ row.status || '-' }}
+          </span>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef>Ações</th>
+        <td mat-cell *matCellDef="let row" class="actions">
+          <button mat-stroked-button color="primary" *ngIf="row.status==='ATIVO' || row.status==='ATRASADO'" (click)="marcarDevolvido(row)">
+            <mat-icon>assignment_turned_in</mat-icon>
+            Devolvido
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns" class="header-row" sticky></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+
+  <mat-paginator [pageSize]="10" [pageSizeOptions]="[5,10,25]" showFirstLastButtons></mat-paginator>
+</mat-card>

@@ -1,0 +1,38 @@
+<mat-card class="form-card mat-elevation-z4">
+  <mat-card-header>
+    <mat-card-title>Novo empréstimo</mat-card-title>
+    <mat-card-subtitle>Selecione cliente, livro e data prevista.</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <form class="form-grid" autocomplete="off">
+      <mat-form-field appearance="fill">
+        <mat-label>Cliente</mat-label>
+        <mat-select [(ngModel)]="form.clienteId" name="clienteId" required>
+          <mat-option *ngFor="let c of (clientes$ | async)" [value]="c.id">{{ c.nome }} ({{ c.cpf }})</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Livro</mat-label>
+        <mat-select [(ngModel)]="form.livroId" name="livroId" required>
+          <mat-option *ngFor="let l of (livros$ | async)" [value]="l.id">{{ l.titulo }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Data de devolução prevista</mat-label>
+        <input matInput type="date" [(ngModel)]="form.dataDevolucaoPrevista" name="dataDevolucaoPrevista" required>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width-field">
+        <mat-label>Bibliotecário responsável</mat-label>
+        <input matInput [(ngModel)]="form.bibliotecarioResponsavel" name="bibliotecarioResponsavel" maxlength="120">
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+  <mat-card-actions align="end">
+    <button mat-stroked-button color="primary" type="button" (click)="cancel()">Cancelar</button>
+    <button mat-flat-button color="primary" type="button" (click)="save()" [disabled]="isSaving">{{ isSaving ? 'Salvando...' : 'Salvar' }}</button>
+  </mat-card-actions>
+</mat-card>
+

@@ -1,61 +1,40 @@
 <mat-card class="form-card mat-elevation-z4">
   <mat-card-header>
     <mat-card-title>Novo livro</mat-card-title>
-    <mat-card-subtitle>Inclua detalhes editoriais, de estoque e fornecedor.</mat-card-subtitle>
+    <mat-card-subtitle>Inclua detalhes editoriais e estoque.</mat-card-subtitle>
   </mat-card-header>
 
   <mat-card-content class="livro-form">
     <section class="form-section">
-      <h3>Informacoes gerais</h3>
       <div class="form-grid">
         <mat-form-field appearance="fill" class="full-width-field">
-          <mat-label>Fornecedor</mat-label>
-          <mat-select [(ngModel)]="livro.fornecedor_id" name="fornecedor_id">
-            <mat-option [value]="undefined">Sem fornecedor</mat-option>
-            <mat-option *ngFor="let item of fornecedor" [value]="item">
-              {{ item.NomeFantasia }} - {{ item.RazaoSocial }}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-
-        <mat-form-field appearance="fill" class="full-width-field">
-          <mat-label>Titulo do livro</mat-label>
-          <input matInput [(ngModel)]="livro.liNome" name="liNome" placeholder="Ex.: Design de Informacao">
-        </mat-form-field>
-
-        <mat-form-field appearance="fill" class="full-width-field">
-          <mat-label>Descricao</mat-label>
-          <textarea matInput rows="3" [(ngModel)]="livro.liDescricao" name="liDescricao"></textarea>
-        </mat-form-field>
-
-        <mat-form-field appearance="fill">
-          <mat-label>Avaliacao</mat-label>
-          <input matInput type="number" min="0" max="5" step="0.1" [(ngModel)]="livro.liAvaliacao" name="liAvaliacao">
-        </mat-form-field>
-
-        <mat-form-field appearance="fill">
-          <mat-label>Numero de paginas</mat-label>
-          <input matInput type="number" min="0" [(ngModel)]="livro.liNumeropagi" name="liNumeropagi">
-        </mat-form-field>
-
-        <mat-form-field appearance="fill">
-          <mat-label>Idioma</mat-label>
-          <input matInput [(ngModel)]="livro.liIdioma" name="liIdioma">
-        </mat-form-field>
-
-        <mat-form-field appearance="fill">
-          <mat-label>Data de publicacao</mat-label>
-          <input matInput type="date" [(ngModel)]="livro.liDataPubli" name="liDataPubli">
-        </mat-form-field>
-
-        <mat-form-field appearance="fill">
-          <mat-label>Dimensoes</mat-label>
-          <input matInput [(ngModel)]="livro.liDimensoes" name="liDimensoes" placeholder="Altura x Largura">
+          <mat-label>Título</mat-label>
+          <input matInput [(ngModel)]="livro.titulo" name="titulo" required maxlength="200" placeholder="Ex.: Design de Informação">
         </mat-form-field>
 
         <mat-form-field appearance="fill">
           <mat-label>Autor</mat-label>
-          <input matInput [(ngModel)]="livro.liAutor" name="liAutor">
+          <input matInput [(ngModel)]="livro.autor" name="autor" required maxlength="150">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>ISBN</mat-label>
+          <input matInput [(ngModel)]="livro.isbn" name="isbn" required maxlength="20">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Editora</mat-label>
+          <input matInput [(ngModel)]="livro.editora" name="editora">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Ano de publicação</mat-label>
+          <input matInput type="number" min="0" [(ngModel)]="livro.anoPublicacao" name="anoPublicacao">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Estoque</mat-label>
+          <input matInput type="number" min="0" [(ngModel)]="livro.estoque" name="estoque">
         </mat-form-field>
       </div>
     </section>
@@ -68,3 +47,4 @@
     </button>
   </mat-card-actions>
 </mat-card>
+

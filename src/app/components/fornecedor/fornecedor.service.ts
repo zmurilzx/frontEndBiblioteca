@@ -10,7 +10,7 @@ import { environment } from '../../../environments/environment';
 })
 export class FornecedorService {
 
-  baseUrl: string = `${environment.apiUrl}/fornecedor`;
+  baseUrl: string = `${environment.apiUrl}/fornecedores`;
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
 
@@ -30,19 +30,21 @@ export class FornecedorService {
     return this.http.get<Fornecedor[]>(this.baseUrl);
   }
 
-  readById(fId: string): Observable<Fornecedor> {
-    const url = `${this.baseUrl}/${fId}`;
+  readById(id: number): Observable<Fornecedor> {
+    const url = `${this.baseUrl}/${id}`;
     return this.http.get<Fornecedor>(url);
   }
 
   update(fornecedor: Fornecedor): Observable<Fornecedor> {
-    const url = `${this.baseUrl}/${fornecedor.fId}`;
+    const url = `${this.baseUrl}/${fornecedor.id}`;
     return this.http.put<Fornecedor>(url, fornecedor);
   }
 
-  delete(fId: number): Observable<Fornecedor> {
-    const url = `${this.baseUrl}/${fId}`;
+  delete(id: number): Observable<Fornecedor> {
+    const url = `${this.baseUrl}/${id}`;
     return this.http.delete<Fornecedor>(url);
   }
   
 }
+
+

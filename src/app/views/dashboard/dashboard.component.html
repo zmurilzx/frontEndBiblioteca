@@ -1,7 +1,7 @@
 <section class="dashboard page">
   <header class="page-header dashboard-header">
     <div class="header-info">
-      <span class="filled-badge">Atualizado agora</span>
+      <span class="filled-badge">{{ lastUpdatedText }}</span>
       <h1 class="page-title">Vis&atilde;o geral</h1>
       <p class="page-subtitle">
         Acompanhe clientes, fornecedores, livros e pagamentos em tempo real.
@@ -9,13 +9,13 @@
     </div>
 
     <div class="header-actions">
-      <button mat-stroked-button color="primary" class="refresh-button">
-        <mat-icon>refresh</mat-icon>
-        Atualizar
-      </button>
-      <button mat-flat-button color="primary" class="primary-button" routerLink="/cliente/create">
+      <a mat-raised-button color="primary" routerLink="/cliente/create" aria-label="Novo cadastro">
         <mat-icon>add</mat-icon>
         Novo cadastro
+      </a>
+      <button mat-stroked-button color="primary" class="refresh-button" (click)="refresh()" aria-label="Atualizar">
+        <mat-icon>refresh</mat-icon>
+        Atualizar
       </button>
     </div>
   </header>
@@ -45,6 +45,61 @@
   <mat-card class="insight-card mat-elevation-z4">
     <mat-card-header>
       <div class="insight-header">
+        <mat-card-title>Resumo operacional</mat-card-title>
+        <mat-card-subtitle>Status de empréstimos e pagamentos</mat-card-subtitle>
+      </div>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="summary-grid">
+        <div class="summary-item">
+          <mat-icon>assignment_return</mat-icon>
+          <div>
+            <div class="kpi">{{ activeLoans }}</div>
+            <div class="kpi-label">Empréstimos ativos</div>
+          </div>
+        </div>
+        <div class="summary-item">
+          <mat-icon color="warn">error_outline</mat-icon>
+          <div>
+            <div class="kpi">{{ overdueCount }}</div>
+            <div class="kpi-label">Atrasos</div>
+          </div>
+        </div>
+        <div class="summary-item">
+          <mat-icon>credit_card</mat-icon>
+          <div>
+            <div class="kpi">{{ activePayments }}</div>
+            <div class="kpi-label">Formas ativas</div>
+          </div>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="insight-card mat-elevation-z4">
+    <mat-card-header>
+      <div class="insight-header">
+        <mat-card-title>Últimos cadastros</mat-card-title>
+        <mat-card-subtitle>Clientes, fornecedores e livros</mat-card-subtitle>
+      </div>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="recent-grid">
+        <div class="recent-item" *ngFor="let r of recent" [routerLink]="r.route">
+          <mat-icon>{{ r.icon }}</mat-icon>
+          <div>
+            <div class="recent-title">{{ r.title }}</div>
+            <div class="recent-subtitle" *ngIf="r.subtitle">{{ r.subtitle }}</div>
+          </div>
+          <mat-icon class="chevron">chevron_right</mat-icon>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="insight-card mat-elevation-z4">
+    <mat-card-header>
+      <div class="insight-header">
         <mat-card-title>Atividade recente</mat-card-title>
         <mat-card-subtitle>&Uacute;ltimos 30 dias</mat-card-subtitle>
       </div>
@@ -53,6 +108,18 @@
       </button>
     </mat-card-header>
     <mat-card-content>
+    <div class="chart-controls">
+      <div class="left">
+        <button mat-stroked-button [color]="lastDays===7 ? 'primary' : undefined" (click)="changeDays(7)">7d</button>
+        <button mat-stroked-button [color]="lastDays===30 ? 'primary' : undefined" (click)="changeDays(30)">30d</button>
+        <button mat-stroked-button [color]="lastDays===90 ? 'primary' : undefined" (click)="changeDays(90)">90d</button>
+      </div>
+      <div class="right">
+        <button mat-button [color]="include.clientes ? 'primary' : undefined" (click)="toggleSource('clientes')"><mat-icon>group</mat-icon> Clientes</button>
+        <button mat-button [color]="include.fornecedores ? 'primary' : undefined" (click)="toggleSource('fornecedores')"><mat-icon>local_shipping</mat-icon> Fornecedores</button>
+        <button mat-button [color]="include.livros ? 'primary' : undefined" (click)="toggleSource('livros')"><mat-icon>menu_book</mat-icon> Livros</button>
+      </div>
+    </div>
       <app-line-chart [data]="chartData" [width]="760" [height]="220"></app-line-chart>
     </mat-card-content>
   </mat-card>
@@ -70,3 +137,7 @@
     </mat-card>
   </div>
 </section>
+
+
+
+

@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { FormaPagamento } from '../forma-pagamento.model';
 import { FormaPagamentoService } from '../forma-pagamento.service';
 
-@Component({  // <<< ESSENCIAL
+@Component({
   selector: 'app-forma-pagamento-create',
   templateUrl: './forma-pagamento-create.component.html',
   styleUrls: ['./forma-pagamento-create.component.css']
@@ -11,14 +11,14 @@ import { FormaPagamentoService } from '../forma-pagamento.service';
 export class FormaPagamentoCreateComponent {
 
   formaPagamento: FormaPagamento = {
-    FId: 0,
+    id: 0,
     descricao: '',
     tipo: '',
     numeroParcelas: 0,
     diasEntreParcelas: 0,
-    permiteTroco:  '',
-    taxa_percentual: 0,
-    ativo: ''
+    permiteTroco: false,
+    taxaPercentual: 0,
+    ativo: true
   };
 
   isSaving = false;
@@ -37,7 +37,7 @@ export class FormaPagamentoCreateComponent {
         this.router.navigate(['/fpagamentos']);
       },
       error: () => {
-        this.formaPagamentoService.showMessage('NÃ£o foi possÃ­vel criar a forma de pagamento.');
+        this.formaPagamentoService.showMessage('Não foi possível criar a forma de pagamento.');
         this.isSaving = false;
       }
     });
@@ -46,5 +46,4 @@ export class FormaPagamentoCreateComponent {
   cancel(): void {
     this.router.navigate(['/fpagamentos']);
   }
-
 }

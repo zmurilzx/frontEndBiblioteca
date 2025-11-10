@@ -9,13 +9,15 @@
         <mat-label>Pesquisar</mat-label>
         <input matInput (keyup)="applyFilter($any($event.target).value)" placeholder="Nome ou CPF" />
       </mat-form-field>
-      <button mat-fab color="primary" [routerLink]="'/cliente/create'" aria-label="Novo cliente" class="fab-add">
-        <mat-icon>add</mat-icon>
-      </button>
+      <a mat-raised-button color="primary" routerLink="/cliente/create">
+        <mat-icon>person_add</mat-icon>
+        Novo cliente
+      </a>
     </div>
   </div>
 
   <div class="table-content">
+    <ng-container *ngIf="dataSource.data.length; else emptyClientes">
     <table mat-table [dataSource]="dataSource" matSort class="data-table">
       <ng-container matColumnDef="id">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
@@ -71,6 +73,18 @@
       <tr mat-header-row *matHeaderRowDef="displayedColumns" class="header-row" sticky></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
+    </ng-container>
+    <ng-template #emptyClientes>
+      <div class="empty-state">
+        <mat-icon>diversity_3</mat-icon>
+        <h3>Nenhum cliente</h3>
+        <p>Crie seu primeiro cliente para começar.</p>
+        <a mat-raised-button color="primary" routerLink="/cliente/create">
+          <mat-icon>person_add</mat-icon>
+          Novo cliente
+        </a>
+      </div>
+    </ng-template>
   </div>
 
   <mat-paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 25]" showFirstLastButtons></mat-paginator>

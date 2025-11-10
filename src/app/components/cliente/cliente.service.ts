@@ -11,7 +11,7 @@ import { environment } from '../../../environments/environment';
 })
 export class ClienteService {
 
-  baseUrl: string = `${environment.apiUrl}/cliente`;
+  baseUrl: string = `${environment.apiUrl}/clientes`;
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
 
@@ -31,18 +31,20 @@ export class ClienteService {
     return this.http.get<Cliente[]>(this.baseUrl);
   }
 
-  readById(cliId: string): Observable<Cliente> {
-    const url = `${this.baseUrl}/${cliId}`;
+  readById(id: number): Observable<Cliente> {
+    const url = `${this.baseUrl}/${id}`;
     return this.http.get<Cliente>(url);
   }
 
   update(cliente: Cliente): Observable<Cliente> {
-    const url = `${this.baseUrl}/${cliente.cliId}`;
+    const url = `${this.baseUrl}/${cliente.id}`;
     return this.http.put<Cliente>(url, cliente);
   }
 
-  delete(cliId: number): Observable<Cliente> {
-    const url = `${this.baseUrl}/${cliId}`;
+  delete(id: number): Observable<Cliente> {
+    const url = `${this.baseUrl}/${id}`;
     return this.http.delete<Cliente>(url);
   }
 }
+
+

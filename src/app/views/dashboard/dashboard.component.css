@@ -41,15 +41,15 @@
 }
 
 .primary-button {
-  background: linear-gradient(135deg, #22d3ee 0%, #0ea5e9 45%, #6366f1 100%);
+  background: #fff;
   color: #fff;
-  box-shadow: 0 18px 34px rgba(14, 165, 233, 0.32);
+  box-shadow: var(--shadow);
   transition: transform 0.18s ease, box-shadow 0.2s ease;
 }
 
 .primary-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 24px 40px rgba(14, 165, 233, 0.36);
+  box-shadow: var(--shadow-lg);
 }
 
 .stats-grid {
@@ -64,14 +64,14 @@
   gap: 18px;
   padding: 22px;
   border: 1px solid rgba(99, 102, 241, 0.12);
-  background: linear-gradient(145deg, rgba(99, 102, 241, 0.14), rgba(255, 255, 255, 0.92));
+  background: #fff;
   box-shadow: var(--shadow);
   transition: transform 0.18s ease, box-shadow 0.25s ease;
 }
 
 .stat-card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow);
 }
 
 .stat-icon {
@@ -92,7 +92,7 @@
   position: absolute;
   inset: 3px;
   border-radius: 16px;
-  background: linear-gradient(140deg, rgba(255, 255, 255, 0.18), rgba(15, 23, 42, 0.15));
+  background: #fff;
 }
 
 .stat-icon mat-icon {
@@ -102,19 +102,19 @@
 }
 
 .stat-card:nth-child(1) .stat-icon::after {
-  background: linear-gradient(140deg, rgba(56, 189, 248, 0.22), rgba(14, 165, 233, 0.18));
+  background: #fff;
 }
 
 .stat-card:nth-child(2) .stat-icon::after {
-  background: linear-gradient(140deg, rgba(251, 191, 36, 0.28), rgba(249, 115, 22, 0.18));
+  background: #fff;
 }
 
 .stat-card:nth-child(3) .stat-icon::after {
-  background: linear-gradient(140deg, rgba(168, 85, 247, 0.26), rgba(79, 70, 229, 0.2));
+  background: #fff;
 }
 
 .stat-card:nth-child(4) .stat-icon::after {
-  background: linear-gradient(140deg, rgba(248, 113, 113, 0.26), rgba(239, 68, 68, 0.2));
+  background: #fff;
 }
 
 .stat-card:nth-child(1) .stat-icon mat-icon { color: #38bdf8; }
@@ -186,7 +186,7 @@
   position: absolute;
   inset: 0;
   border-radius: 4px;
-  background: linear-gradient(90deg, #6366f1, #22d3ee);
+  background: #fff;
   box-shadow: 0 6px 14px rgba(34, 211, 238, 0.32);
 }
 
@@ -213,7 +213,7 @@
 .insight-card {
   padding: 20px 24px 16px;
   border: 1px solid rgba(15, 23, 42, 0.08);
-  background: linear-gradient(160deg, rgba(255, 255, 255, 0.82), rgba(226, 232, 255, 0.58));
+  background: #fff;
 }
 
 .insight-header {
@@ -239,6 +239,19 @@
   gap: 20px;
 }
 
+.summary-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-top:4px}
+.summary-item{display:flex;align-items:center;gap:12px;padding:12px 14px;border:1px solid var(--border);border-radius:12px;background:#fff}
+.summary-item mat-icon{font-size:22px;width:22px;height:22px;color:var(--primary-700)}
+.summary-item .kpi{font-size:1.4rem;font-weight:600;line-height:1}
+.summary-item .kpi-label{font-size:.85rem;color:var(--muted)}
+
+.recent-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.recent-item{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:12px 14px;border:1px solid var(--border);border-radius:12px;background:#fff;cursor:pointer;transition:transform .18s ease, box-shadow .2s ease}
+.recent-item:hover{transform:translateY(-2px);box-shadow:var(--shadow-sm)}
+.recent-item mat-icon{color:var(--primary-700)}
+.recent-item .recent-title{font-weight:600}
+.recent-item .recent-subtitle{color:var(--muted);font-size:.88rem}
+
 .module-card {
   display: grid;
   grid-template-columns: auto 1fr auto;
@@ -248,13 +261,13 @@
   border: 1px solid rgba(99, 102, 241, 0.08);
   transition: transform 0.18s ease, box-shadow 0.2s ease, border-color 0.2s ease;
   cursor: pointer;
-  background: rgba(255, 255, 255, 0.9);
+  background: #fff;
 }
 
 .module-card:hover {
   transform: translateY(-4px);
   border-color: rgba(99, 102, 241, 0.4);
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow);
 }
 
 .module-icon {
@@ -313,3 +326,8 @@
   }
 }
 
+
+
+.chart-controls{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:8px}
+.chart-controls .left,.chart-controls .right{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.chart-controls button mat-icon{margin-right:6px}
